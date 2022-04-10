@@ -1,4 +1,4 @@
-//import ContactsListResault from './ContactsListResault';
+import ContactsListResault from './ContactsListResault';
 import SearchContacts from './SearchContacts';
 import AddContact from './AddContact';
 import { useState } from 'react';
@@ -7,7 +7,7 @@ function ContactsBar({userData}) {
 
     var contacts = userData.contacts;
 
-//    const [contactsToShow, setContactsToShow] = useState(contacts);
+    const [contactsToShow, setContactsToShow] = useState(contacts);
 
 //    const doSearch = function(q){
 //        setContactsToShow(contacts.filter((contact) => contact.id.includes(q)));
@@ -22,7 +22,7 @@ function ContactsBar({userData}) {
             </div>
             <SearchContacts />
             <ul className="list-group">
-                {/*<ContactsListResault toShow={contactsToShow} />*/}
+                <ContactsListResault toShow={contactsToShow} />
             </ul>
         </div>
     )
