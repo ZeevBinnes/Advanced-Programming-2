@@ -1,38 +1,68 @@
-.App {
+
+.list-group-item{
+  background-color: transparent;
+}
+
+.head-bar{
+  border: 0;
+}
+
+#add_contact{
+  font-size: larger;
+  border: 0ch;
+  background-color: transparent;
+}
+#add_contact:hover{
+  cursor: pointer;
+}
+
+.proph_imgs{
+  width: 50px;
+  border-radius: 50%;
   text-align: center;
+  vertical-align: middle;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.chat_list_item{
+  background-color: transparent;
+  height: 80px;
+/*    padding-right: 8px; */
+}
+.chat_list_item:hover{
+  background-color: rgb(240, 240, 240);
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.name_in_chat_list{
+  width: 85%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.hour_and_time{
+  padding-right: 0%;
+  padding-left: 0%;
+  text-align: right;
+  width: 15%;
+  font-size: smaller;
+  white-space: pre-line;
+  overflow: hidden;
+}
+.message_preview{
+  padding-right: 0%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.chat-box{
+  background-color: antiquewhite;
 }
 
-.App-link {
-  color: #61dafb;
+#add_file{
+  font-size: larger;
+  border: 0ch;
+  background-color: transparent;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#add_file:hover{
+  cursor: pointer;
 }
