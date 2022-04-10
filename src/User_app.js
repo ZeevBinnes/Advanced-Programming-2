@@ -1,4 +1,4 @@
-//import ContactsBar from './contacts/ContactsBar';
+import ContactsBar from './contacts/ContactsBar';
 
 function User_app({user}) {
     // add here a use State (maybe with ref) for updating user.
@@ -6,8 +6,7 @@ function User_app({user}) {
         <div>
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-4 bg-light vh-100 p-0"></div>
-                    {/*<ContactsBar userData={user} />*/}
+                    <ContactsBar userData={user} />
                     <div className="col-8 chat-box position-relative">
                         contacts name here
                         <div className='position-absolute bottom-0 start-0'>
