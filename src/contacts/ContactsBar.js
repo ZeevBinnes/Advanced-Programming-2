@@ -9,9 +9,9 @@ function ContactsBar({userData}) {
 
     const [contactsToShow, setContactsToShow] = useState(contacts);
 
-//    const doSearch = function(q){
-//        setContactsToShow(contacts.filter((contact) => contact.id.includes(q)));
-//    }
+    const doSearch = function(q){
+        setContactsToShow(contacts.filter((contact) => contact.id.includes(q)));
+    }
 
     return(
         <div className="col-4 bg-light vh-100 p-0">
@@ -20,7 +20,7 @@ function ContactsBar({userData}) {
                 <span className="w-100 ms-3">{userData.id}</span>
                 <AddContact />
             </div>
-            <SearchContacts />
+            <SearchContacts doSearch={doSearch} />
             <ul className="list-group">
                 <ContactsListResault toShow={contactsToShow} />
             </ul>
