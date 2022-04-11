@@ -6,7 +6,7 @@ function User_app({user}) {
         <div>
             <div className="container-fluid">
                 <div className="row">
-                    <ContactsBar userData={user} />
+                    <ContactsBar user={user} />
                     <div className="col-8 chat-box position-relative">
                         contacts name here
                         <div className='position-absolute bottom-0 start-0'>

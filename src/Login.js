@@ -1,16 +1,22 @@
-import {GetUser} from "./data/users";
+import { useRef } from "react";
+import {FindUser, GetUser} from "./data/users";
 
 // this is only a basic screen, to see things can work
 function Login({setUser}) {
 
+    const textBox = useRef(null)
+
     const click = function(){
-        setUser(GetUser('Bracha Achronah'));
+        var userName = textBox.current.value;
+        if (FindUser(userName))
+            setUser(userName);
     }
 
     return(
-        <div>
-            <button onClick={click}>click to login</button>
-        </div>
+        <form className="d-flex">
+            <input ref={textBox} className="form-control me-2" placeholder="Type User Name" ></input>
+            <button onClick={click} type="submit">login</button>
+        </form>
     )
 }
 
