@@ -1,14 +1,20 @@
+import { useState } from 'react';
 import ContactsBar from './contacts/ContactsBar';
+import { GetNickName } from './data/users';
 
 function User_app({user}) {
     // add here a use State (maybe with ref) for updating user.
+
+    // this useState updates the contact that should be showd in the chat box
+    const [displayedContact, setDisplayedContact] = useState('');
+
     return (
         <div>
             <div className="container-fluid">
                 <div className="row">
-                    <ContactsBar user={user} />
+                    <ContactsBar user={user} setDisplayedContact={setDisplayedContact} />
                     <div className="col-8 chat-box position-relative">
-                        contacts name here
+                        {GetNickName(displayedContact)}
                         <div className='position-absolute bottom-0 start-0'>
                             <form className="d-flex">
                                 <i className="bi bi-paperclip" id='add_file'></i>
