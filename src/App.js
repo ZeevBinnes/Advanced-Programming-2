@@ -10,13 +10,16 @@ function App() {
 
     if (userConnected == null) {
         if (!register) {
-            return (<Login setUser={setUser} />)
+            return ( < Login setUser = { setUser }
+                />)
+            }
+            else {
+                return; // havn't dealt with it yet
+            }
         } else {
-            return; // havn't dealt with it yet
+            return ( < User_app user = { userConnected }
+                />);
+            }
         }
-    } else {
-        return(<User_app user={userConnected} />);
-    }
-}
 
-export default App;
+        export default App;

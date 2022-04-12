@@ -13,6 +13,7 @@ function User_app({user}) {
             <div className="container-fluid">
                 <div className="row">
                     <ContactsBar user={user} setDisplayedContact={setDisplayedContact} />
+                    {/*<ChatBox/> */} 
                     <div className="col-8 chat-box position-relative">
                         {GetNickName(displayedContact)}
                         <div className='position-absolute bottom-0 start-0'>
