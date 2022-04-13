@@ -1,0 +1,12 @@
+.chatbox {
+    padding: 0%;
+    flex: 1;
+    background-color: oldlace;
+}
+
+.chat_header{
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+}
+
+

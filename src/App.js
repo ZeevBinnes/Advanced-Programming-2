@@ -9,16 +9,25 @@ function App() {
     const [userConnected, setUser] = useState(null);
     const [register, setRegister] = useState(false);
 
+
     if (userConnected == null) {
         if (!register) {
-            return ( <Login setUser={setUser} setRegister={setRegister} />)
+            return ( 
+                <div className="app">
+                     < Login setUser = { setUser } setRegister={setRegister} />
+                </div>
+            )
             }
             else {
                 return (<Register setUser={setUser} setRegister={setRegister} />)
             }
         } else {
-            return ( <User_app user = { userConnected } />);
+            return (
+                <div className="app">
+                     < User_app user = { userConnected }/>
+                </div>
+                );
             }
         }
 
-        export default App;
+export default App;

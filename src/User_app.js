@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ContactsBar from './contacts/ContactsBar';
 import { GetNickName } from './data/users';
+import ChatBox from './components/ChatBox'
 
 function User_app({user}) {
     // add here a use State (maybe with ref) for updating user.
@@ -10,24 +11,11 @@ function User_app({user}) {
 
     return (
         <div>
-            <div className="container-fluid">
-                <div className="row">
-                    <ContactsBar user={user} setDisplayedContact={setDisplayedContact} />
-                    {/*<ChatBox/> */} 
-                    <div className="col-8 chat-box position-relative">
-                        {GetNickName(displayedContact)}
-                        <div className='position-absolute bottom-0 start-0'>
-                            <form className="d-flex">
-                                <i className="bi bi-paperclip" id='add_file'></i>
-                                <input className="form-control me-2" type="Type-message" placeholder="Type message here" aria-label="Type-message"></input>
-                                <button className="btn btn-outline-success" type="button">Send</button>
-                            </form>
-                        </div>
-                        <div className='col-sm-12 chat-box'>
-                            chat box here
-                        </div>
-                    </div>
-                </div>
+            <div className="user_app">
+            
+                <ContactsBar user={user} setDisplayedContact={setDisplayedContact} />
+                <ChatBox contact={displayedContact}/>
+                
             </div>
         </div>
     );
