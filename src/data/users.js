@@ -1,17 +1,17 @@
 import A_photo from './pink_flower_2.jpeg'
 import B_photo from './flowers_square.jpeg'
-import Shahar_photo from './shahar_prophile.jpg'
-import Me_photo from './proph_img.jpeg'
+import Shahar_photo from './shahar_profile.jpg'
+import Me_photo from './prof_img.jpeg'
 
 var users = {}
-users['aaa' ] = {nickName: 'Abba Even with a very long name', password: 'A-pass', photo: A_photo,
+users['aaa' ] = {nickName: 'Abba Even with a very long name', password: 'Apass', photo: A_photo,
     contacts: {'bbb': [
             {whoSent: 'rec', time: '7:32 10.4.22', type: 'text', content: 'hi its my 1\'st message'},
             {whoSent: 'sent', time: '7:34 10.4.22', type: 'text', content: 'hello there'},
             {whoSent: 'rec', time: '7:37 10.4.22', type: 'text', content: 'hi its my 2\'st message'}
         ]}
     }
-users['bbb'] = {nickName: 'Bracha Achronah', password: 'B-pass', photo: B_photo,
+users['bbb'] = {nickName: 'Bracha Achronah', password: 'Bpass', photo: B_photo,
     contacts: {'aaa': [
             {whoSent: 'sent', time: '7:32 10.4.22', type: 'text', content: 'hi its my 1\'st message'},
             {whoSent: 'rec', time: '7:34 10.4.22', type: 'text', content: 'hello there'},
@@ -21,8 +21,8 @@ users['bbb'] = {nickName: 'Bracha Achronah', password: 'B-pass', photo: B_photo,
             {whoSent: 'sent', time: '8:32 10.4.22', type: 'text', content: 'hi to you as well'}
         ]}
     }
-users['Shahar userName'] = {nickName: 'Shahar Hamelech!!!11', password: 'C-pass', photo: Shahar_photo, contects: {}}
-users['uuu'] = {nickName: 'Me and my Name', password: 'D-pass', photo: Me_photo, contacts: {}}
+users['Shahar userName'] = {nickName: 'Shahar Hamelech!!!11', password: 'Cpass', photo: Shahar_photo, contects: {}}
+users['mmm'] = {nickName: 'Me and my Name', password: 'Dpass', photo: Me_photo, contacts: {}}
 
 
 export function FindUser(id){
@@ -45,10 +45,6 @@ export function GetPhoto(id) {
         return users[id].photo;
     } 
 }
-
-//export function SetContacts(myId, contactsId) {
-//    users[myId].contects += [{id: contactsId, chat: []}];
-//}
 
 export function GetContacts(myId){
     if (users[myId] != null) {
@@ -77,4 +73,14 @@ export function GetChat(myId, othersId){
 export function AddContactToUser(user, newContact){
     if (users[user].contacts[newContact] == null)
         users[user].contacts[newContact] = [];
+}
+
+export function VerifyPassword(username, password){
+    if (users[username].password == password)
+        return true;
+    return false;
+}
+
+export function AddUser(userName, password, nickName, profImg) {
+    users[userName] = {nickName: nickName, password: password, photo: profImg, contacts: {}}
 }

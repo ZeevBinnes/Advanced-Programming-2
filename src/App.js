@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import User_app from './User_app';
 import Login from './Login';
+import Register from './Register';
 
 function App() {
 
@@ -10,15 +11,13 @@ function App() {
 
     if (userConnected == null) {
         if (!register) {
-            return ( < Login setUser = { setUser }
-                />)
+            return ( <Login setUser={setUser} setRegister={setRegister} />)
             }
             else {
-                return; // havn't dealt with it yet
+                return (<Register setUser={setUser} setRegister={setRegister} />)
             }
         } else {
-            return ( < User_app user = { userConnected }
-                />);
+            return ( <User_app user = { userConnected } />);
             }
         }
 
