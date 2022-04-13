@@ -1,68 +1,99 @@
-
-.list-group-item{
-  background-color: transparent;
+.app{
+    display: grid;
+    place-items: center;
+    background-image: url("lake.jpg");
+    height: 100vh;
 }
 
-.head-bar{
-  border: 0;
+.login{
+    display: flex;
+    background-color: antiquewhite;
+    box-shadow: -1px 4px 20px -6px black;
 }
 
-#add_contact{
-  font-size: larger;
-  border: 0ch;
-  background-color: transparent;
-}
-#add_contact:hover{
-  cursor: pointer;
-}
-
-.proph_imgs{
-  width: 50px;
-  border-radius: 50%;
-  text-align: center;
-  vertical-align: middle;
+.user_app{
+    display: flex;
+    background-color: antiquewhite;
+    height: 90vh;
+    width: 90vw;
+    box-shadow: -1px 4px 20px -6px black;
 }
 
-.chat_list_item{
-  background-color: transparent;
-  height: 80px;
-/*    padding-right: 8px; */
-}
-.chat_list_item:hover{
-  background-color: rgb(240, 240, 240);
-  cursor: pointer;
+.contacts_bar{
+    flex: 0.35;
 }
 
-.name_in_chat_list{
-  width: 85%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.hour_and_time{
-  padding-right: 0%;
-  padding-left: 0%;
-  text-align: right;
-  width: 15%;
-  font-size: smaller;
-  white-space: pre-line;
-  overflow: hidden;
-}
-.message_preview{
-  padding-right: 0%;
-  white-space: nowrap;
-  overflow: hidden;
+
+.list-group-item {
+    background-color: transparent;
 }
 
-.chat-box{
-  background-color: antiquewhite;
+.head-bar {
+    border: 0;
 }
 
-#add_file{
-  font-size: larger;
-  border: 0ch;
-  background-color: transparent;
+#add_contact {
+    font-size: larger;
+    border: 0ch;
+    background-color: transparent;
 }
-#add_file:hover{
-  cursor: pointer;
+
+#add_contact:hover {
+    cursor: pointer;
+}
+
+.proph_imgs {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.chat_list_item {
+    background-color: transparent;
+    height: 80px;
+    /*    padding-right: 8px; */
+}
+
+.chat_list_item:hover {
+    background-color: rgb(240, 240, 240);
+    cursor: pointer;
+}
+
+.name_in_chat_list {
+    width: 85%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.hour_and_time {
+    padding-right: 0%;
+    padding-left: 0%;
+    text-align: right;
+    width: 15%;
+    font-size: smaller;
+    white-space: pre-line;
+    overflow: hidden;
+}
+
+.message_preview {
+    padding-right: 0%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.chat-box {
+    background-color: antiquewhite;
+}
+
+#add_file {
+    font-size: larger;
+    border: 0ch;
+    background-color: transparent;
+}
+
+#add_file:hover {
+    cursor: pointer;
 }

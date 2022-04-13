@@ -8,17 +8,24 @@ function App() {
     const [userConnected, setUser] = useState(null);
     const [register, setRegister] = useState(false);
 
+
     if (userConnected == null) {
         if (!register) {
-            return ( < Login setUser = { setUser }
-                />)
+            return ( 
+                <div className="app">
+                     < Login setUser = { setUser }/>
+                </div>
+            )
             }
             else {
                 return; // havn't dealt with it yet
             }
         } else {
-            return ( < User_app user = { userConnected }
-                />);
+            return (
+                <div className="app">
+                     < User_app user = { userConnected }/>
+                </div>
+                );
             }
         }
 

@@ -13,7 +13,7 @@ function Login({setUser}) {
     }
 
     return(
-        <form className="d-flex">
+        <form className="login">
             <input ref={textBox} className="form-control me-2" placeholder="Type User Name" ></input>
             <button onClick={click} type="submit">login</button>
         </form>
