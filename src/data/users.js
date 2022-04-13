@@ -4,15 +4,15 @@ import Shahar_photo from './shahar_prophile.jpg'
 import Me_photo from './proph_img.jpeg'
 
 var users = {}
-users['Abba Even userName' ] = {nickName: 'Abba Even with a very long name', password: 'A-pass', photo: A_photo,
-    contacts: {'Bracha Achronah userName': [
+users['aaa' ] = {nickName: 'Abba Even with a very long name', password: 'A-pass', photo: A_photo,
+    contacts: {'bbb': [
             {whoSent: 'rec', time: '7:32 10.4.22', type: 'text', content: 'hi its my 1\'st message'},
             {whoSent: 'sent', time: '7:34 10.4.22', type: 'text', content: 'hello there'},
             {whoSent: 'rec', time: '7:37 10.4.22', type: 'text', content: 'hi its my 2\'st message'}
         ]}
     }
 users['bbb'] = {nickName: 'Bracha Achronah', password: 'B-pass', photo: B_photo,
-    contacts: {'Abba Even userName': [
+    contacts: {'aaa': [
             {whoSent: 'sent', time: '7:32 10.4.22', type: 'text', content: 'hi its my 1\'st message'},
             {whoSent: 'rec', time: '7:34 10.4.22', type: 'text', content: 'hello there'},
             {whoSent: 'sent', time: '7:37 10.4.22', type: 'text', content: 'hi its my 2\'st message'}
@@ -22,7 +22,7 @@ users['bbb'] = {nickName: 'Bracha Achronah', password: 'B-pass', photo: B_photo,
         ]}
     }
 users['Shahar userName'] = {nickName: 'Shahar Hamelech!!!11', password: 'C-pass', photo: Shahar_photo, contects: {}}
-users['userName userName'] = {nickName: 'Me and my Name', password: 'D-pass', photo: Me_photo, contacts: {}}
+users['uuu'] = {nickName: 'Me and my Name', password: 'D-pass', photo: Me_photo, contacts: {}}
 
 
 export function FindUser(id){
@@ -72,4 +72,9 @@ export function GetChat(myId, othersId){
     if (users[myId] != null && users[myId].contacts[othersId] != null) {
         return users[myId].contacts[othersId];
     }
+}
+
+export function AddContactToUser(user, newContact){
+    if (users[user].contacts[newContact] == null)
+        users[user].contacts[newContact] = [];
 }
