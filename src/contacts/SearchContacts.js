@@ -12,7 +12,7 @@ function SearchContacts( {doSearch} ) {
     return(
         <form className="d-flex">
             <input ref={searchBox} onKeyUp={search} className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
-            <button onClick={search} className="btn btn-outline-success" type="submit">Search</button>
+            <button onClick={search} className="btn btn-outline-success" type="button">Search</button>
         </form>
     )
 }

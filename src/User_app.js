@@ -19,7 +19,7 @@ function User_app({user}) {
                             <form className="d-flex">
                                 <i className="bi bi-paperclip" id='add_file'></i>
                                 <input className="form-control me-2" type="Type-message" placeholder="Type message here" aria-label="Type-message"></input>
-                                <button className="btn btn-outline-success" type="submit">Send</button>
+                                <button className="btn btn-outline-success" type="button">Send</button>
                             </form>
                         </div>
                         <div className='col-sm-12 chat-box'>

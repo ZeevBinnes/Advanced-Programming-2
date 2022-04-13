@@ -6,8 +6,8 @@ import { GetContacts, GetNickName, GetPhoto } from '../data/users';
 
 function ContactsBar({user, setDisplayedContact}) {
 
-    var contacts = GetContacts(user);
-
+    //var contacts = GetContacts(user);
+    const [contacts, SetContacts] = useState(GetContacts(user));
     const [contactsToShow, setContactsToShow] = useState(GetContacts(user));
 
     const doSearch = function(q){
@@ -19,7 +19,7 @@ function ContactsBar({user, setDisplayedContact}) {
             <div className="head-bar list-group-item d-flex justify-content-between align-items-center">
                 <img src={GetPhoto(user)} className="proph_imgs"></img>
                 <span className="w-100 ms-3">{GetNickName(user)}</span>
-                <AddContact />
+                <AddContact user={user} contacts={contacts} setContacts={SetContacts} setContactsToShow={setContactsToShow} />
             </div>
             <SearchContacts doSearch={doSearch} />
             <ul className="list-group">
