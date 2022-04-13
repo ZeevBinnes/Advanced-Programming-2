@@ -13,15 +13,35 @@
 
 .user_app{
     display: flex;
-    background-color: antiquewhite;
+    background-color: #ededed;
     height: 90vh;
     width: 90vw;
     box-shadow: -1px 4px 20px -6px black;
 }
 
 .contacts_bar{
-    flex: 0.35;
+    flex: 0.3;
+    flex-direction: column;
+    display: flex;
+    background-color: white;
 }
+
+.user_bar{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-right: 1px solid lightgray;
+    align-items: center;
+    min-width: 10vw;
+}
+
+.chats_search{
+    display: flex;
+    align-items: center;
+    background-color: #f6f6f6;
+}
+
+
 
 
 .list-group-item {

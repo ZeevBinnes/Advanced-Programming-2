@@ -16,15 +16,13 @@ function ContactsBar({user, setDisplayedContact}) {
 
     return(
         <div className="contacts_bar">
-            <div className="head-bar list-group-item d-flex justify-content-between align-items-center">
+            <div className="user_bar">
                 <img src={GetPhoto(user)} className="proph_imgs"></img>
                 <span className="w-100 ms-3">{GetNickName(user)}</span>
                 <AddContact user={user} contacts={contacts} setContacts={SetContacts} setContactsToShow={setContactsToShow} />
             </div>
             <SearchContacts doSearch={doSearch} />
-            <ul className="list-group">
-                <ContactsListResault toShow={contactsToShow} user={user} setDisplayedContact={setDisplayedContact} />
-            </ul>
+            <ContactsListResault toShow={contactsToShow} user={user} setDisplayedContact={setDisplayedContact} />
         </div>
     )
 }

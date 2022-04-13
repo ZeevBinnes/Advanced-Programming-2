@@ -12,10 +12,8 @@ function User_app({user}) {
     return (
         <div>
             <div className="user_app">
-            
                 <ContactsBar user={user} setDisplayedContact={setDisplayedContact} />
                 <ChatBox contact={displayedContact}/>
-                
             </div>
         </div>
     );
