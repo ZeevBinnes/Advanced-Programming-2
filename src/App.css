@@ -2,6 +2,7 @@
     display: grid;
     place-items: center;
     background-image: url("lake.jpg");
+    background-size:cover;
     height: 100vh;
 }
 
@@ -20,9 +21,14 @@
 .user_app{
     display: flex;
     background-color: #ededed;
-    height: 90vh;
-    width: 90vw;
-    box-shadow: -1px 4px 20px -6px black;
+    width: 100%;
+    height: 100vh;
+    max-width: 1450px;
+    margin: 0 auto;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .06), 0 2px 5px 0 rgba(0, 0, 0, .2);
+    position: relative;
+    z-index: 100;
+    overflow: hidden;
 }
 
 .contacts_bar{
@@ -39,12 +45,17 @@
     border-right: 1px solid lightgray;
     align-items: center;
     min-width: 10vw;
+    height: 70px;
 }
 
 .chats_search{
     display: flex;
     align-items: center;
     background-color: #f6f6f6;
+}
+
+.chat__contact-wrapper {
+    flex: 1;
 }
 
 
@@ -122,4 +133,48 @@
 
 #add_file:hover {
     cursor: pointer;
+}
+
+.sidebar {
+    min-width: 300px;
+    border-right: 1px solid #DADADA;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat__contact-wrapper {
+    flex: 1;
+}
+
+.chat__contact-name, .chat__contact-desc {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.chat__contact-name {
+    color: #000000;
+    font-size: 1rem;
+    margin-bottom: 2px;
+    padding-left: 0.5vw;
+}
+
+.chat__contact-name, .chat__contact-desc {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.chat__contact-name {
+    color: #000000;
+    font-size: 1rem;
+    margin-bottom: 2px;
+    padding-left: 1vw;
+}
+
+.sidebar__search-wrapper {
+    padding: 7px 10px;
+    height: 50px;
+    background: #F6F6F6;
+    position: relative;
 }

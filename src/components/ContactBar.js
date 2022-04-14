@@ -11,7 +11,9 @@ function ContactsBar({contact, setDisplayedContact}) {
         <div className="contact_bar">
             <div className="head-bar list-group-item d-flex justify-content-between align-items-center">
                 <img src={GetPhoto(contact)} className="proph_imgs"></img>
-                <span className="w-100 ms-3">{GetNickName(contact)}</span>
+                <div className="chat__contact-wrapper">
+					<h5 className="chat__contact-name"> {GetNickName(contact)}</h5>
+				</div>
             </div>
         </div>
     )

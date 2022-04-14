@@ -4,6 +4,7 @@ import AddContact from './AddContact';
 import { useState } from 'react';
 import { GetContacts, GetNickName, GetPhoto } from '../data/users';
 
+
 function ContactsBar({user, setDisplayedContact}) {
 
     //var contacts = GetContacts(user);
@@ -15,15 +16,17 @@ function ContactsBar({user, setDisplayedContact}) {
     }
 
     return(
-        <div className="contacts_bar">
+        <aside className="sidebar">
             <div className="user_bar">
                 <img src={GetPhoto(user)} className="proph_imgs"></img>
-                <span className="w-100 ms-3">{GetNickName(user)}</span>
+                <div className="chat__contact-wrapper">
+					<h2 className="chat__contact-name"> {GetNickName(user)} </h2>
+				</div>
                 <AddContact user={user} contacts={contacts} setContacts={SetContacts} setContactsToShow={setContactsToShow} />
             </div>
             <SearchContacts doSearch={doSearch} />
             <ContactsListResault toShow={contactsToShow} user={user} setDisplayedContact={setDisplayedContact} />
-        </div>
+        </aside>
     )
 }
 

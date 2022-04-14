@@ -24,7 +24,7 @@ function App() {
         } else {
             return (
                 <div className="app">
-                     < User_app user = { userConnected }/>
+                    < User_app user = { userConnected }/>
                 </div>
                 );
             }

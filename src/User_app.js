@@ -10,11 +10,9 @@ function User_app({user}) {
     const [displayedContact, setDisplayedContact] = useState(null);
 
     return (
-        <div>
-            <div className="user_app">
+        <div className="user_app">
                 <ContactsBar user={user} setDisplayedContact={setDisplayedContact} />
                 <ChatBox contact={displayedContact} user={user}/>
-            </div>
         </div>
     );
 }

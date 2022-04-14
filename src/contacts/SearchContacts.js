@@ -10,6 +10,7 @@ function SearchContacts( {doSearch} ) {
     }
 
     return(
+        
         <form className="chats_search">
             <input ref={searchBox} onKeyUp={search} className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
             <button onClick={search} className="btn btn-outline-success" type="button">Search</button>

@@ -33,15 +33,14 @@ function ChatBox({contact} ,{user}) {
 
                 </div>
                 <div className="chat_body">
-                    <ChatDisp lastMsgRef={lastMsgRef} messages={user.messages} />
-                { /*
+                { 
                     <p className='chat_message ${true && "chat_message_outgoing"}'>
                         messege
                         <span className='chat_time'>
                             13:09
                         </span>
                     </p>
-        */}
+                }
                 </div>
                 <div className="chat_bar">
                     <div class="btn-group dropup">
