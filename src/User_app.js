@@ -7,13 +7,13 @@ function User_app({user}) {
     // add here a use State (maybe with ref) for updating user.
 
     // this useState updates the contact that should be showd in the chat box
-    const [displayedContact, setDisplayedContact] = useState('');
+    const [displayedContact, setDisplayedContact] = useState(null);
 
     return (
         <div>
             <div className="user_app">
                 <ContactsBar user={user} setDisplayedContact={setDisplayedContact} />
-                <ChatBox contact={displayedContact}/>
+                <ChatBox contact={displayedContact} user={user}/>
             </div>
         </div>
     );

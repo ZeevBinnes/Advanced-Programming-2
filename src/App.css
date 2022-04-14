@@ -7,7 +7,13 @@
 
 .login{
     display: flex;
-    background-color: antiquewhite;
+    background-color: white;
+    box-shadow: -1px 4px 20px -6px black;
+}
+
+.login > form{
+    padding: 20px;
+    background-color: white;
     box-shadow: -1px 4px 20px -6px black;
 }
 

@@ -22,6 +22,7 @@ function Login({setUser, setRegister}) {
     const registerButton = function(){setRegister(true);}
 
     return(
+         <div className="login">
         <form >
             <div className="mb-3">
                 <label className="form-label">User Name</label>
@@ -37,11 +38,13 @@ function Login({setUser, setRegister}) {
                 <button type="button" onClick={registerButton} className="btn btn-primary">Register</button>
             </div>
         </form>
+        </div>
         )
         /*<form className="d-flex">
             <input ref={textBox} className="form-control me-2" placeholder="Type User Name" ></input>
             <button onClick={click} type="submit">login</button>
         </form>*/
+        
     }
 
 export default Login;
