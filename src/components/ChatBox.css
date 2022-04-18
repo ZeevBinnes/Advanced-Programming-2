@@ -1,5 +1,5 @@
 .chatbox {
-    flex: 0.7;
+    flex: 1;
     flex-direction: column;
     display: flex;
 }
@@ -63,3 +63,10 @@
 
 }
 
+.cont_imgs{
+    width: 67px;
+    height: 67px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+}

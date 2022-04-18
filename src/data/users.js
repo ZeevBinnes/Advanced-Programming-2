@@ -21,7 +21,7 @@ users['bbb'] = {nickName: 'Bracha Achronah', password: 'Bpass', photo: B_photo,
             {whoSent: 'sent', time: '8:32 10.4.22', type: 'text', content: 'hi to you as well'}
         ]}
     }
-users['Shahar userName'] = {nickName: 'Shahar Hamelech!!!11', password: 'Cpass', photo: Shahar_photo, contects: {}}
+users['Shahar userName'] = {nickName: 'Shahar', password: 'Cpass', photo: Shahar_photo, contects: {}}
 users['mmm'] = {nickName: 'Me and my Name', password: 'Dpass', photo: Me_photo, contacts: {}}
 
 

@@ -26,9 +26,9 @@ function ChatBox({contact} ,{user}) {
         return (
             <div className="chatbox">
                 <div className="chat_header">
-                    <img src={GetPhoto(contact)} className="proph_imgs"></img>
+                    <img src={GetPhoto(contact)} className="cont_imgs"></img>
                     <div className="chat_header_text">
-                        <h3>{GetNickName(contact)}</h3>
+                        <h2>{GetNickName(contact)}</h2>
                     </div>
 
                 </div>
