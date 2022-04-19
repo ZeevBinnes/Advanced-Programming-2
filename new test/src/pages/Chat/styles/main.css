@@ -97,7 +97,7 @@
     background: #E4DCD4;
     overflow-y: scroll;
     overflow-x: hidden;
-    padding: 20px 5% 2pc;
+    padding: 0px 5% 0px;
 }
 
 .chat__date-wrapper {

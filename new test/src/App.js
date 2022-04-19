@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Sidebar from "components/Sidebar";
 import Chat from "pages/Chat";
+import Login from 'Login.js';
+import Register from 'Register.js';
 
 const userPrefersDark =
 	window.matchMedia &&
@@ -18,9 +20,20 @@ function App() {
 	const [userConnected, setUser] = useState(null);
     const [register, setRegister] = useState(false);
 
-
-	return (
-		<div className="app">
+	if (userConnected == null) {
+        if (!register) {
+            return ( 
+                <div className="app">
+                     < Login setUser = { setUser } setRegister={setRegister} />
+                </div>
+            )
+            }
+            else {
+                return (<Register setUser={setUser} setRegister={setRegister} />)
+            }
+        } else {
+            return (
+                <div className="app">
 			<Router>
 				<div className="app-content">
 					<Sidebar user={userConnected} />
@@ -31,7 +44,8 @@ function App() {
 				</div>
 			</Router>
 		</div>
-	);
+                );
+            }
 }
 
 export default App;

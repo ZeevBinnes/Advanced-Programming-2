@@ -1,14 +1,18 @@
-.dark-theme .app {
-    background: #090F13;
-}
 
-.dark-theme .app::before {
-    display: none;
-}
 
 .dark-theme .app__mobile-message {
     color: rgba(241, 241, 242, 0.92);
 }
+
+.dark-theme .login > form {
+    background-color: rgb(19, 28, 33);
+}
+
+.dark-theme .form-label {
+    color: white(9, 14, 17, 0.96);
+}
+
+
 
 @media screen and (max-width: 500px) {
     .dark-theme .app::before {

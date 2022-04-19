@@ -4,6 +4,9 @@ import { GetNickName } from './data/users';
 import ChatBox from './components/ChatBox'
 
 function User_app({user}) {
+    // thats the data for contacts and messages
+    const [contact_list, setContact_List] = useState([]);
+
     // add here a use State (maybe with ref) for updating user.
 
     // this useState updates the contact that should be showd in the chat box
