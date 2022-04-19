@@ -1,10 +1,7 @@
 import React from "react";
 import Icon from "components/Icon";
 
-const attachButtons = [
-	{ icon: "attachRooms", label: "Choose video", func: () => console.log("addVideo") },
-	{ icon: "attachImage", label: "Choose image", func: () => console.log("addImage")},
-];
+
 
 const ChatInput = ({
 	showAttach,
@@ -12,7 +9,14 @@ const ChatInput = ({
 	newMessage,
 	setNewMessage,
 	submitNewMessage,
+	submitNewVideo,
+	submitNewImage,
 }) => {
+	const attachButtons = [
+		{ icon: "attachRooms", label: "Choose video", func: () => submitNewVideo()},
+		{ icon: "attachImage", label: "Choose image", func: () => submitNewImage()},
+	];
+	
 	const detectEnterPress = (e) => {
 		if (e.key === "Enter" || e.keyCode === 13) {
 			submitNewMessage();

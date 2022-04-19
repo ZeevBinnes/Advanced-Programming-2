@@ -6,6 +6,9 @@ import Register from './Register';
 
 function App() {
 
+    // the users only buildin data
+    const [user_list, setlist] = useState([]);
+
     const [userConnected, setUser] = useState(null);
     const [register, setRegister] = useState(false);
 

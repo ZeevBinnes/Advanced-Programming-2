@@ -43,6 +43,17 @@ const Chat = ({ match, history }) => {
 		scrollToLastMsg();
 	};
 
+	const submitNewVideo = () => {
+		addNewMessage(user.id, newMessage, "video");
+		setNewMessage("");
+		scrollToLastMsg();
+	}
+	const submitNewImage = () => {
+		addNewMessage(user.id, newMessage, "image");
+		setNewMessage("");
+		scrollToLastMsg();
+	}
+
 	return (
 		<div className="chat">
 			<div className="chat__body">
@@ -61,13 +72,13 @@ const Chat = ({ match, history }) => {
 						<Icon id="downArrow" />
 					</button>
 					<ChatInput
-						showEmojis={showEmojis}
-						setShowEmojis={setShowEmojis}
 						showAttach={showAttach}
 						setShowAttach={setShowAttach}
 						newMessage={newMessage}
 						setNewMessage={setNewMessage}
 						submitNewMessage={submitNewMessage}
+						submitNewVideo={submitNewVideo}
+						submitNewImage={submitNewImage}
 					/>
 				</footer>
 			</div>

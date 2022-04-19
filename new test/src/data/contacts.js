@@ -9,254 +9,11 @@ import wom from "assets/images/women.jpeg";
 import getRandomSentence from "utils/getRandomSentence";
 
 
-/*
-import A_photo from './pink_flower_2.jpeg'
-import B_photo from './flowers_square.jpeg'
-import Shahar_photo from './shahar_profile.jpg'
-import Me_photo from './prof_img.jpeg'
-
-var users = {}
-users['aaa'] = {nickName: 'Abba Even with a very long name', password: 'Apass', photo: A_photo,
-    contacts: {'bbb': {
-		"04/06/2021": [
-			{
-				content: getRandomSentence(),
-				sender: 8,
-				time: "08:11:26",
-				status: null,
-			},
-			{
-				content: getRandomSentence(),
-				sender: null,
-				time: "08:15:45",
-				status: "read",
-			},
-			{
-				content: getRandomSentence(),
-				sender: 8,
-				time: "09:11:26",
-				status: null,
-			},
-			{
-				content: getRandomSentence(),
-				sender: null,
-				time: "09:15:45",
-				status: "read",
-			},
-		],
-
-		YESTERDAY: [
-			{
-				content: getRandomSentence(),
-				sender: 8,
-				time: "08:11:26",
-				status: null,
-			},
-			{
-				content: getRandomSentence(),
-				sender: null,
-				time: "08:15:45",
-				status: "read",
-			},
-			{
-				content: getRandomSentence(),
-				sender: 8,
-				time: "09:11:26",
-				status: null,
-			},
-			{
-				content: getRandomSentence(),
-				sender: null,
-				time: "09:15:45",
-				status: "read",
-			},
-		],
-
-		TODAY: [
-			{
-				content: getRandomSentence(),
-				sender: 8,
-				time: "08:11:26",
-				status: null,
-			},
-			{
-				content: getRandomSentence(),
-				sender: null,
-				time: "08:15:45",
-				status: "read",
-			},
-			{
-				content: getRandomSentence(),
-				sender: 8,
-				time: "09:11:26",
-				status: null,
-			},
-			{
-				content: getRandomSentence(),
-				sender: null,
-				time: "09:15:45",
-				status: "read",
-			},
-		],
-	}}
-    }
-users['bbb'] = {nickName: 'Bracha Achronah', password: 'Bpass', photo: B_photo,
-    contacts: {'aaa': {
-		"04/06/2021": [
-			{
-				content: getRandomSentence(),
-				sender: 8,
-				time: "08:11:26",
-				status: null,
-			},
-			{
-				content: getRandomSentence(),
-				sender: null,
-				time: "08:15:45",
-				status: "read",
-			},
-			{
-				content: getRandomSentence(),
-				sender: 8,
-				time: "09:11:26",
-				status: null,
-			},
-			{
-				content: getRandomSentence(),
-				sender: null,
-				time: "09:15:45",
-				status: "read",
-			},
-		],
-
-		YESTERDAY: [
-			{
-				content: getRandomSentence(),
-				sender: 8,
-				time: "08:11:26",
-				status: null,
-			},
-			{
-				content: getRandomSentence(),
-				sender: null,
-				time: "08:15:45",
-				status: "read",
-			},
-			{
-				content: getRandomSentence(),
-				sender: 8,
-				time: "09:11:26",
-				status: null,
-			},
-			{
-				content: getRandomSentence(),
-				sender: null,
-				time: "09:15:45",
-				status: "read",
-			},
-		],
-
-		TODAY: [
-			{
-				content: getRandomSentence(),
-				sender: 8,
-				time: "08:11:26",
-				status: null,
-			},
-			{
-				content: getRandomSentence(),
-				sender: null,
-				time: "08:15:45",
-				status: "read",
-			},
-			{
-				content: getRandomSentence(),
-				sender: 8,
-				time: "09:11:26",
-				status: null,
-			},
-			{
-				content: getRandomSentence(),
-				sender: null,
-				time: "09:15:45",
-				status: "read",
-			},
-		],
-	}}
-    }
-users['Shahar userName'] = {nickName: 'Shahar Hamelech!!!11', password: 'Cpass', photo: Shahar_photo, contects: {}}
-users['mmm'] = {nickName: 'Me and my Name', password: 'Dpass', photo: Me_photo, contacts: {}}
-
-
-export function FindUser(id){
-    if (users[id] != null) {
-        return true;
-    } else
-        return false;
-}
-
-export function GetUser(myId) {
-    var user = users[myId];
-    if (user != null)
-        return JSON.parse(JSON.stringify(user));
-    else
-        return null;
-}
-
-export function GetPhoto(id) {
-    if (users[id] != null) {
-        return users[id].photo;
-    } 
-}
-
-export function GetContacts(myId){
-    if (users[myId] != null) {
-        var retval = [];
-        for (var con in users[myId].contacts) {
-            retval.push(con);
-        }
-        return retval;
-    } else {
-        return null;
-    }
-}
-
-export function GetNickName(id){
-    if (users[id] != null) {
-        return users[id].nickName;
-    }
-}
-
-export function GetChat(myId, othersId){
-    if (users[myId] != null && users[myId].contacts[othersId] != null) {
-        return users[myId].contacts[othersId];
-    }
-}
-
-export function AddContactToUser(user, newContact){
-    if (users[user].contacts[newContact] == null)
-        users[user].contacts[newContact] = [];
-}
-
-export function VerifyPassword(username, password){
-    if (users[username].password == password)
-        return true;
-    return false;
-}
-
-export function AddUser(userName, password, nickName, profImg) {
-    users[userName] = {nickName: nickName, password: password, photo: profImg, contacts: {}}
-}
-
-
-*/
-
 const users = [
 	{
 		id: 1,
 		profile_picture: ppGirl3,
-		name: "Love of my life ❤️💜",
-		phone_number: "+2348123456789",
+		name: "Moran Cohen",
 		unread: 3,
 		messages: {
 			"04/06/2021": [
@@ -367,9 +124,7 @@ const users = [
 	{
 		id: 2,
 		profile_picture: ppGirl2,
-		name: "Karen Okonkwo",
-		phone_number: "+2348123456789",
-		whatsapp_name: "Karen O.",
+		name: "Keren Mor",
 		unread: 0,
 		messages: {
 			"04/06/2021": [
@@ -454,9 +209,7 @@ const users = [
 	{
 		id: 3,
 		profile_picture: ppGirl1,
-		name: "Titilayo Bello",
-		phone_number: "+2348123456789",
-		whatsapp_name: "titi123",
+		name: "Titi Ayano",
 		unread: 0,
 		messages: {
 			"04/06/2021": [
@@ -534,12 +287,14 @@ const users = [
 				},
 				{
 					image: true,
+					content: wom,
 					sender: 3,
 					time: "09:12:26",
 					status: null,
 				},
 				{
 					image: true,
+					content: ppBoy1,
 					sender: null,
 					time: "09:13:26",
 					status: null,
@@ -559,9 +314,7 @@ const users = [
 	{
 		id: 4,
 		profile_picture: ppBoy2,
-		name: "David Schwimmer",
-		phone_number: "+2348123456789",
-		whatsapp_name: "David",
+		name: "David Hamelech",
 		unread: 1,
 		messages: {
 			"04/06/2021": [
@@ -665,9 +418,7 @@ const users = [
 	{
 		id: 5,
 		profile_picture: ppBoy1,
-		name: "Daniel Oladeji",
-		phone_number: "+2348123456789",
-		whatsapp_name: "Beyonce",
+		name: "Daniel",
 		unread: 0,
 		messages: {
 			"04/06/2021": [
@@ -758,9 +509,7 @@ const users = [
 	{
 		id: 6,
 		profile_picture: ppBoy3,
-		name: "Chris Breno",
-		phone_number: "+2348123456789",
-		whatsapp_name: "Chris",
+		name: "Chris Rock",
 		unread: 3,
 		messages: {
 			"04/06/2021": [
@@ -864,9 +613,7 @@ const users = [
 	{
 		id: 7,
 		profile_picture: ppGirl3,
-		name: "Karen Okonkwo",
-		phone_number: "+2348123456789",
-		whatsapp_name: "Karen",
+		name: "Yafa Yarkoni",
 		unread: 0,
 		messages: {
 			"04/06/2021": [
@@ -959,8 +706,6 @@ const users = [
 		id: 8,
 		profile_picture: ppGirl4,
 		name: "Beyoncé Knowles",
-		phone_number: "+2348123456789",
-		whatsapp_name: "Beyonce",
 		unread: 0,
 		messages: {
 			"04/06/2021": [

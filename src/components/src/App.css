@@ -2,14 +2,9 @@
 .app {
     width: 100%;
     min-height: 100vh;
-    background-image: url("data/lake.jpg");
-    background-size:cover;
+    background-image: url("lake.jpg");
+    background-size: cover;
     position: relative;
-}
-
-
-.app__mobile-message {
-    display: none;
 }
 
 .app-content {
@@ -40,18 +35,4 @@
     .app-content {
         height: calc(100vh - 40px);
     }
-}
-
-.login{
-    background-position: center;
-    box-shadow: -1px 4px 20px -6px black;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.login > form{
-    padding: 20px;
-    background-color: white;
-    box-shadow: -1px 4px 20px -6px black;
 }

@@ -1,21 +1,31 @@
 import React from "react";
+import { useState } from 'react';
 import "./styles/main.css";
 import avatar from "assets/images/profile-picture-girl-1.jpeg";
 import Icon from "components/Icon";
 import Contact from "./Contact";
+import { GetContacts, GetNickName, GetPhoto } from 'data/users';
 
 import { useUsersContext } from "context/usersContext";
 
-const Sidebar = ({user}) => {
+
+
+const Sidebar = ({user, setDisplayedContact}) => {
 	const { users: contacts } = useUsersContext();
+	const [contacts_list, SetContacts] = useState(GetContacts(user));
+	const [contactsToShow, setContactsToShow] = useState(GetContacts(user));
+
+	const doSearch = function(q){
+		setContactsToShow(contacts.filter((contact) => GetNickName(contact).includes(q)));
+	}
 	return (
 		<aside className="sidebar">
 			<header className="header">
 				<div className="sidebar__avatar-wrapper">
-					<img src={avatar} alt="Karen Okonkwo" className="avatar" />
+					<img src={GetPhoto(user)} alt="Karen Okonkwo" className="avatar" />
 				</div>
 				<div className="chat__contact-wrapper">
-					<h2 className="chat__contact-name"> "add name"</h2>
+					<h2 className="chat__contact-name"> {GetNickName(user)}</h2>
 				</div>
 				<div className="sidebar__actions">
 					<button className="sidebar__action" aria-label="New chat">
