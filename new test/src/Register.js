@@ -44,7 +44,8 @@ function Register({setUser, setRegister}) {
     }
 
     return(
-        <form >
+        <div className="login">
+        <form>
             <div className="mb-3">
                 <label className="form-label">User Name</label>
                 <input ref={usernameTextBox} type="username" className="form-control"></input>
@@ -67,6 +68,7 @@ function Register({setUser, setRegister}) {
                 <button type="button" onClick={login} className="btn btn-primary">go to Login</button>
             </div>
         </form>
+        </div>
         )
         /*<form className="d-flex">
             <input ref={textBox} className="form-control me-2" placeholder="Type User Name" ></input>

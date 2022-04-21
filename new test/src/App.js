@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Sidebar from "components/Sidebar";
 import Chat from "pages/Chat";
@@ -29,7 +29,7 @@ function App() {
             )
             }
             else {
-                return (<Register setUser={setUser} setRegister={setRegister} />)
+                return (<div className="app"><Register setUser={setUser} setRegister={setRegister} /></div>)
             }
         } else {
             return (
@@ -37,10 +37,10 @@ function App() {
 			<Router>
 				<div className="app-content">
 					<Sidebar user={userConnected} />
-					<Switch>
+					<Routes>
 						<Route path="/chat/:id" component={Chat} />
 						<Route component={Home} />
-					</Switch>
+					</Routes>
 				</div>
 			</Router>
 		</div>
