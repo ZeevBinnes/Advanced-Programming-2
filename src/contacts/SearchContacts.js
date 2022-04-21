@@ -5,7 +5,8 @@ function SearchContacts( {doSearch} ) {
 
     const searchBox = useRef(null);
 
-    const search = function(){
+    const search = function(e){
+        e.preventDefault();
         doSearch(searchBox.current.value)
     }
 
@@ -13,7 +14,7 @@ function SearchContacts( {doSearch} ) {
         
         <form className="chats_search">
             <input ref={searchBox} onKeyUp={search} className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
-            <button onClick={search} className="btn btn-outline-success" type="button">Search</button>
+            <button onClick={search} className="btn btn-outline-success" type="submit">Search</button>
         </form>
     )
 }

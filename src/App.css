@@ -18,7 +18,12 @@
     box-shadow: -1px 4px 20px -6px black;
 }
 
-.user_app{
+.linkFont {
+    color: blue;
+    cursor: pointer;
+}
+
+/*.user_app{
     display: flex;
     background-color: #ededed;
     width: 100%;
@@ -29,6 +34,13 @@
     position: relative;
     z-index: 100;
     overflow: hidden;
+}*/
+.user_app{
+    display: flex;
+    background-color: antiquewhite;
+    height: 90vh;
+    width: 90vw;
+    box-shadow: -1px 4px 20px -6px black;
 }
 
 .contacts_bar{
@@ -177,4 +189,8 @@
     height: 50px;
     background: #F6F6F6;
     position: relative;
+}
+
+.limit_column_height {
+    height: 90vh;
 }

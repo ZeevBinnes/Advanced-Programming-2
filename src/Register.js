@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import {AddUser, FindUser, GetUser, VerifyPassword} from "./data/users";
 
 // this is only a basic screen, to see things can work
@@ -7,17 +7,14 @@ function Register({setUser, setRegister}) {
     const usernameTextBox = useRef(null)
     const passwordTextBox = useRef(null)
     const nickNameTextBox = useRef(null)
-    const profileImageBox = useRef(null)
 
     const login = function(){setRegister(false);}
 
-    const register = function(){
+    const register = function(e){
+        e.preventDefault();
         var userName = usernameTextBox.current.value;
         var password = passwordTextBox.current.value;
         var nickName = nickNameTextBox.current.value;
-        var profImgSrc = profileImageBox.current.value;
-    //    var profImg = URL.createObjectURL(profImgSrc.files[0])
-    //    profImg.src = profImgSrc.fileName;
         if (FindUser(userName)) {
             alert('there is user with this username already')
         } else {
@@ -28,8 +25,8 @@ function Register({setUser, setRegister}) {
             else if (!validate(nickName, 3))
                 alert('invalid nickname')
             else {
-                AddUser(userName, password, nickName, profImgSrc);
-            //    setRegister(false);
+                AddUser(userName, password, nickName, profilePicture);
+                setRegister(false);
                 setUser(userName);
             }
         }
@@ -43,7 +40,14 @@ function Register({setUser, setRegister}) {
             return true;
     }
 
+    const [profilePicture, setProfilePicture] = useState();
+    const handlePicture = (e) => {
+        setProfilePicture(URL.createObjectURL(e.target.files[0]))
+        document.getElementById('profile_mini_pic').classList.remove('collapse');
+    }
+
     return(
+        <div className="login">
         <form >
             <div className="mb-3">
                 <label className="form-label">User Name</label>
@@ -52,6 +56,7 @@ function Register({setUser, setRegister}) {
             <div className="mb-3">
                 <label className="form-label">Password</label>
                 <input ref={passwordTextBox} type="password" className="form-control" id="exampleInputPassword1"></input>
+                <div id="passwordHelp" class="form-text">at least 4 letters or numbers</div>
             </div>
             <div className="mb-3">
                 <label className="form-label">Display Name</label>
@@ -59,19 +64,16 @@ function Register({setUser, setRegister}) {
             </div>
             <div className="mb-3">
                 <label className="form-label">profile image path</label>
-                <input ref={profileImageBox} type="file" className="form-control"></input>
+                <input type="file" className="form-control" id="uploadProfilePhoto" onChange={handlePicture}></input>
             </div>
-            <button type="button" onClick={register} className="btn btn-primary">Submit</button>
+            <button type="submit" onClick={register} className="btn btn-primary">Submit</button>
             <div>
-                already have a user? login now! 
-                <button type="button" onClick={login} className="btn btn-primary">go to Login</button>
+            already have a user?
+                <span className="linkFont" onClick={login}> login now! </span>
             </div>
         </form>
+        </div>
         )
-        /*<form className="d-flex">
-            <input ref={textBox} className="form-control me-2" placeholder="Type User Name" ></input>
-            <button onClick={click} type="submit">login</button>
-        </form>*/
     }
 
 export default Register;

@@ -7,7 +7,8 @@ function Login({setUser, setRegister}) {
     const usernameTextBox = useRef(null)
     const passwordTextBox = useRef(null)
 
-    const login = function(){
+    const login = function(e){
+        e.preventDefault();
         var userName = usernameTextBox.current.value;
         if (FindUser(userName)){
             if (VerifyPassword(userName, passwordTextBox.current.value))
@@ -15,7 +16,7 @@ function Login({setUser, setRegister}) {
             else
                 alert('wrong password')
         } else {
-            //// no such user
+            alert('no such user')
         }
     }
 
@@ -32,10 +33,10 @@ function Login({setUser, setRegister}) {
                 <label className="form-label">Password</label>
                 <input ref={passwordTextBox} type="password" className="form-control" id="exampleInputPassword1"></input>
             </div>
-            <button type="button" onClick={login} className="btn btn-primary">Login</button>
+            <button type="submit" onClick={login} className="btn btn-primary" data-toggle="collapse">Login</button>
             <div>
-                don't have a user yet? register now! 
-                <button type="button" onClick={registerButton} className="btn btn-primary">Register</button>
+                don't have a user yet?
+                <span className="linkFont" onClick={registerButton}> register now! </span>
             </div>
         </form>
         </div>

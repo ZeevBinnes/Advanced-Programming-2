@@ -1,22 +1,26 @@
 import { useRef } from "react";
-import { AddContactToUser, FindUser } from "../data/users";
+import { AddContactToUser, FindUser, GetContacts } from "../data/users";
 
 function AddContact({user, contacts, setContacts, setContactsToShow}) {
     
 
-    const addContactLogic = function () {
+    const addContactLogic = function (e) {
+        e.preventDefault();
         var newContact = addBox.current.value;
+        addBox.current.value = '';
         if (contacts.includes(newContact) || user == newContact){
-//            console.log('includes already!')
+            alert('you added this contact already')
             return;
         }
         if (FindUser(newContact)) {
             AddContactToUser(user, newContact);
-            contacts.push(newContact);
-            setContacts(contacts);
-            setContactsToShow(contacts)
+        //    contacts.push(newContact);
+            setContacts(GetContacts(user));
+            setContactsToShow(GetContacts(user))
         } else {
-//            console.log('no such user.....')
+            if (newContact != ''){
+                alert('no such user')
+            }
         }
     }
 
@@ -30,7 +34,7 @@ function AddContact({user, contacts, setContacts, setContactsToShow}) {
 
     return(
         <div>
-            <button type="button" className="bi bi-person-plus rounded-pill" id="add_contact" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="submit" className="bi bi-person-plus rounded-pill" id="add_contact" data-bs-toggle="modal" data-bs-target="#exampleModal">
             </button>
             <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
@@ -41,7 +45,7 @@ function AddContact({user, contacts, setContacts, setContactsToShow}) {
                         </div>
                         <div className="modal-body">
                             <form className="d-flex" >
-                                <input ref={addBox} className="form-control me-2" type="Type-message" placeholder="Write contects username here" aria-label="Type-message"></input>
+                                <input ref={addBox} onClick={addContactLogic} className="form-control me-2" type="Type-message" placeholder="Write contects username here" aria-label="Type-message"></input>
                             </form>
                         </div>
                         <div className="modal-footer">

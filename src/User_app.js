@@ -1,21 +1,23 @@
 import { useState } from 'react';
 import ContactsBar from './contacts/ContactsBar';
 import { GetNickName } from './data/users';
-import ChatBox from './components/ChatBox'
+import ChatBox from './chatbox/ChatBox'
 
 function User_app({user}) {
     // thats the data for contacts and messages
     const [contact_list, setContact_List] = useState([]);
 
     // add here a use State (maybe with ref) for updating user.
+    const [did_data_change, set_did_data_change] = useState(false);
 
     // this useState updates the contact that should be showd in the chat box
     const [displayedContact, setDisplayedContact] = useState(null);
 
     return (
-        <div className="user_app">
+        <div className="user_app row">
                 <ContactsBar user={user} setDisplayedContact={setDisplayedContact} />
-                <ChatBox contact={displayedContact} user={user}/>
+                <ChatBox contact={displayedContact} user={user}
+                    did_data_change={did_data_change} set_did_data_change={set_did_data_change} />
         </div>
     );
 }

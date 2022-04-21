@@ -3,6 +3,7 @@ import './App.css';
 import User_app from './User_app';
 import Login from './Login';
 import Register from './Register';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
 
@@ -22,15 +23,23 @@ function App() {
             )
             }
             else {
-                return (<Register setUser={setUser} setRegister={setRegister} />)
+                return (<div className="app"><Register setUser={setUser} setRegister={setRegister} /></div>)
             }
-        } else {
-            return (
-                <div className="app">
-                    < User_app user = { userConnected }/>
-                </div>
-                );
-            }
-        }
+    } else {
+        return (
+            <div className="app">
+                <User_app user={userConnected}/>
+                {/*<Router>
+                    <div className="app-content">
+                        <Sidebar user={userConnected} />
+                        <Routes>
+                            <Route path="/fff" component={User_app} />
+                        </Routes>
+                    </div>
+                </Router>*/}
+            </div>
+        );
+    }
+}
 
 export default App;

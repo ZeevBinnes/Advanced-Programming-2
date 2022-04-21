@@ -16,7 +16,7 @@ function ContactsBar({user, setDisplayedContact}) {
     }
 
     return(
-        <aside className="sidebar">
+        <aside className="sidebar col-4 limit_column_height">
             <div className="user_bar">
                 <img src={GetPhoto(user)} className="proph_imgs"></img>
                 <div className="chat__contact-wrapper">
