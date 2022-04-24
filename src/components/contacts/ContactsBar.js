@@ -2,7 +2,8 @@ import ContactsListResault from './ContactsListResault';
 import SearchContacts from './SearchContacts';
 import AddContact from './AddContact';
 import { useState } from 'react';
-import { GetContacts, GetNickName, GetPhoto } from '../data/users';
+import { GetContacts, GetNickName, GetPhoto } from '../../data/users';
+import "./contacts.css"
 
 
 function ContactsBar({user, setDisplayedContact}) {

@@ -71,11 +71,8 @@
     vertical-align: middle;
 }
 
-/* I added from here
-/
-/
-/
-/ */
+/* body of chatbox */
+
 .chat__msg-group {
     display: flex;
     flex-direction: column;
@@ -100,6 +97,7 @@
 .chat__msg.chat__img-wrapper {
     padding: 4px;
     width: 95%;
+    max-width: 300px; /* added */
 }
 
 .chat__msg--sent {
@@ -148,3 +146,69 @@
     overflow-x: hidden;
     padding: 20px 5% 2pc;
 }
+
+/* Chat Footer Toolbar */
+
+.chat__input-wrapper {
+    padding: 10px;
+    height: 60px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.chat__input-icon {
+    color: #919191;
+    margin-left: 8px;
+    margin-right: 8px;
+    width: 28px;
+    height: 28px;
+    padding: 3px;
+    border-radius: 50%;
+}
+
+.chat__input-icon--highlight {
+    color: teal;
+}
+
+.chat__attach {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 50px;
+}
+
+.chat__attach-btn {
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.chat__attach--active .chat__attach-btn {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.chat__attach-btn {
+    margin-bottom: 10px;
+}
+
+.chat__input-icon--pressed {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.chat__input {
+    background: white;
+    color: rgb(74, 74, 74);
+    padding: 20px 10px;
+    border-radius: 22px;
+    flex: 1;
+    height: 100%;
+}
+
+.chat__input::placeholder {
+    color: rgb(153, 153, 153);
+    font-size: 0.9rem;
+}
+
+/* End Chat Footer Toolbar */

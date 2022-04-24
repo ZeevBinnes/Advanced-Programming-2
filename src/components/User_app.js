@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import ContactsBar from './contacts/ContactsBar';
-import { GetNickName } from './data/users';
 import ChatBox from './chatbox/ChatBox'
 
 function User_app({user}) {

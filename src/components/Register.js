@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import {AddUser, FindUser, GetUser, VerifyPassword} from "./data/users";
+import {AddUser, FindUser, GetUser, VerifyPassword} from "../data/users";
 
 // this is only a basic screen, to see things can work
 function Register({setUser, setRegister}) {
@@ -43,7 +43,7 @@ function Register({setUser, setRegister}) {
     const [profilePicture, setProfilePicture] = useState();
     const handlePicture = (e) => {
         setProfilePicture(URL.createObjectURL(e.target.files[0]))
-        document.getElementById('profile_mini_pic').classList.remove('collapse');
+    //    document.getElementById('profile_mini_pic').classList.remove('collapse');
     }
 
     return(

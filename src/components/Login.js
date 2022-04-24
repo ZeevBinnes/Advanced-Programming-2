@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import {FindUser, GetUser, VerifyPassword} from "./data/users";
+import {FindUser, GetUser, VerifyPassword} from "../data/users";
 
 // this is only a basic screen, to see things can work
 function Login({setUser, setRegister}) {

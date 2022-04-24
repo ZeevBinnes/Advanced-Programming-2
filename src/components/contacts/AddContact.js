@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { AddContactToUser, FindUser, GetContacts } from "../data/users";
+import { AddContactToUser, FindUser, GetContacts } from "../../data/users"
 
 function AddContact({user, contacts, setContacts, setContactsToShow}) {
     

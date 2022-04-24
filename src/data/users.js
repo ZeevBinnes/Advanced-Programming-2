@@ -3,6 +3,9 @@ import B_photo from './flowers_square.jpeg'
 import Shahar_photo from './shahar_profile.jpg'
 import Me_photo from './prof_img.jpeg'
 
+import snowVideo from './snowVideo.mp4'
+import pdfFile from './ex1PdfFile.pdf'
+
 var users = {}
 users['aaa'] = {nickName: 'Abba Even with a very long name', password: 'Apass', photo: A_photo,
     contacts: {'bbb': [
@@ -18,11 +21,22 @@ users['bbb'] = {nickName: 'Bracha Achronah', password: 'Bpass', photo: B_photo,
             {sender: true, time: '7:37 10.4.22', type: 'text', content: 'hi its my 2\'st message'},
         ],
         'Shahar userName': [
-            {sender: true, time: '8:32 10.4.22', type: 'text', content: 'hi to you as well'}
+            {sender: true, time: '8:32 10.4.22', type: 'text', content: 'hi to you as well'},
+            {sender: true, time: '8:37 10.4.22', type: 'image', content: Shahar_photo},
+            {sender: true, time: '8:37 10.4.22', type: 'image', content: B_photo},
+            {sender: false, time: '8:39 10.4.22', type: 'video', content: snowVideo},
+            {sender: false, time: '8:39 10.4.22', type: 'file', content: pdfFile}
         ]}
     }
 users['Shahar userName'] = {nickName: 'Shahar', password: 'Cpass', photo: Shahar_photo, contacts: {}}
 users['mmm'] = {nickName: 'Me and my Name', password: 'Dpass', photo: Me_photo, contacts: {}}
+users['q'] = {nickName: 'Me and my Name', password: 'Dpass', photo: Me_photo, contacts: {}}
+users['w'] = {nickName: 'Me and my Name', password: 'Dpass', photo: Me_photo, contacts: {}}
+users['e'] = {nickName: 'Me and my Name', password: 'Dpass', photo: Me_photo, contacts: {}}
+users['r'] = {nickName: 'Me and my Name', password: 'Dpass', photo: Me_photo, contacts: {}}
+users['t'] = {nickName: 'Me and my Name', password: 'Dpass', photo: Me_photo, contacts: {}}
+users['y'] = {nickName: 'Me and my Name', password: 'Dpass', photo: Me_photo, contacts: {}}
+users['u'] = {nickName: 'Me and my Name', password: 'Dpass', photo: Me_photo, contacts: {}}
 
 
 export function FindUser(id){
@@ -85,9 +99,9 @@ export function AddUser(userName, password, nickName, profImg) {
     users[userName] = {nickName: nickName, password: password, photo: profImg, contacts: {}}
 }
 
-export function SendTextMessage(fromUser, toContact, time, content) {
-    const sentMsg = {sender: true, time: time, type: 'text', content: content}
-    const recvMsg = {sender: false, time: time, type: 'text', content: content}
+export function SendMessage(fromUser, toContact, time, type, content) {
+    const sentMsg = {sender: true, time: time, type: type, content: content}
+    const recvMsg = {sender: false, time: time, type: type, content: content}
 
     if (users[fromUser] == undefined && users[toContact == undefined]) {
         return null;

@@ -1,4 +1,4 @@
-import { GetChat, GetNickName, GetPhoto } from '../data/users';
+import { GetChat, GetNickName, GetPhoto } from '../../data/users';
 import ContactItem from './ContactItem'
 
 function ContactsListResault({user, toShow, setDisplayedContact}){
@@ -8,14 +8,19 @@ function ContactsListResault({user, toShow, setDisplayedContact}){
         let chat =  GetChat(user, contact);
         var lastMessage;
         if (chat.length == 0)
-            lastMessage = {time: '', content: ''};
+            lastMessage = {time: '', content: '', type: 'text'};
         else
             lastMessage = chat[chat.length - 1];
+        var content;
+        if (lastMessage.type == 'text')
+            content = lastMessage.content;
+        else
+            content = lastMessage.type;
         return <ContactItem 
             id={contact}
             name={nickName} 
             time={lastMessage.time} 
-            lastMessage={lastMessage.content} 
+            lastMessage={content} 
             photo={photo}
             setDisplayedContact={setDisplayedContact} 
             key={key} />}
