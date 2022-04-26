@@ -15,7 +15,7 @@ function ContactsListResault({user, toShow, setDisplayedContact}){
         if (lastMessage.type == 'text')
             content = lastMessage.content;
         else
-            content = lastMessage.type;
+            content = "<"+lastMessage.type+"> "+lastMessage.fileName;
         return <ContactItem 
             id={contact}
             name={nickName} 
@@ -27,7 +27,7 @@ function ContactsListResault({user, toShow, setDisplayedContact}){
     );
 
     return(
-        <div> {contactsListDisp} </div>
+        <div className='contects_list'> {contactsListDisp} </div>
     );
 }
 

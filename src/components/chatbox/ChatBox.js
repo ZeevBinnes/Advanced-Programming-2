@@ -17,13 +17,13 @@ function ChatBox({contact, user, did_data_change, set_did_data_change}) {
 	//	scrollToLastMsg();
 //	};
 
-    var message_type = 'text';
+//    var message_type = 'text';
 
 //    const lastMsgRef = useRef(null);
 
-    const submitNewMessage = (message_type, input) => {
+    const submitNewMessage = (message_type, input, fileName) => {
         var currentTime = formatDateTime(new Date());
-        SendMessage(user, contact, currentTime, message_type, input);
+        SendMessage(user, contact, currentTime, message_type, input, fileName);
         set_did_data_change(!did_data_change);
     }
         

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { GetChat } from "../../data/users";
 import formatTime from "./formatTime";
 
@@ -44,8 +44,15 @@ function ChatDispA ({user, contact}) {
         } else if (message.type == 'file') {
             return (
                 <div className="chat__msg-group" key={key}>
-                    <div className={`chat__msg chat__img-wrapper ${message.sender ? "chat__msg--rxd" : "chat__msg--sent"}`}>
-                    <iframe src={message.content} width="800px" height="2100px" />
+                    <div className={`chat__msg ${message.sender ? "chat__msg--rxd" : "chat__msg--sent"}`}>
+                        {/*<iframe src={message.content} width="800px" height="2100px" />*/}
+                        <div>
+                            <a href={message.content} download={message.fileName} id='fileDowmload'>
+                                <button type="button" className="btn btn-primary bi bi-file-earmark-arrow-down"></button>
+                            </a>
+                            {" "+message.fileName}
+                        </div>
+                        <span className="chat__msg-filler"> </span>
                         <span className="chat__msg-footer">
                             {formatTime(message.time)}
                         </span>

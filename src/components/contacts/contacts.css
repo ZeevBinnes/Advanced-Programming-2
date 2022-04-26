@@ -86,7 +86,10 @@
     min-width: 300px;
     border-right: 1px solid #DADADA;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;  
+}
+
+.contects_list {
     overflow-y: scroll;
     overflow-x: hidden;
 }

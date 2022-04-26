@@ -182,11 +182,13 @@
     transform: scale(0);
     opacity: 0;
     transition: all 0.5s ease;
+    display: none;
 }
 
 .chat__attach--active .chat__attach-btn {
     transform: scale(1);
     opacity: 1;
+    display: flex;
 }
 
 .chat__attach-btn {

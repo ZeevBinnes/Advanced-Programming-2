@@ -47,7 +47,7 @@ function ChatInput({submitNewMessage}) {
 			submitNewMessage(messageType, newMessage);
 			setNewMessage('');
 		} else if (fileUploaded != null) {
-			submitNewMessage(messageType, fileUploaded);
+			submitNewMessage(messageType, fileUploaded, media.name);
 			setFileUploaded(null);
 		}
 	}
