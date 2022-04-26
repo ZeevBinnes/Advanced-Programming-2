@@ -1,16 +1,8 @@
-.contacts_bar{
-    flex: 0.3;
-    flex-direction: column;
-    display: flex;
-    background-color: rgb(211, 21, 21);
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
 
 .user_bar{
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 5px;
     border-right: 1px solid lightgray;
     align-items: center;
     min-width: 10vw;
@@ -34,24 +26,12 @@
     background-color: transparent;
 }
 
-.head-bar {
-    border: 0;
-}
-
-#add_contact {
-    font-size: larger;
-    border: 0ch;
-    background-color: transparent;
-}
-
-#add_contact:hover {
-    cursor: pointer;
-}
-
 .chat_list_item {
     background-color: transparent;
-    height: 80px;
-    /*    padding-right: 8px; */
+    width: 100%;
+    height: fit-content;
+    padding: 5px;
+    overflow-x: hidden;
 }
 
 .chat_list_item:hover {
@@ -67,8 +47,8 @@
 }
 
 .hour_and_time {
-    padding-right: 0%;
-    padding-left: 0%;
+    padding-right: 0;
+    padding-left: 0;
     text-align: right;
     width: 15%;
     font-size: smaller;
@@ -77,7 +57,7 @@
 }
 
 .message_preview {
-    padding-right: 0%;
+    padding-right: 0;
     white-space: nowrap;
     overflow: hidden;
 }
@@ -90,7 +70,7 @@
 
 }
 
-.contects_list {
+.contacts_list {
     overflow-x:hidden;
     overflow-y:auto;
 

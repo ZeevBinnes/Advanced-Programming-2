@@ -1,28 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
-//import $ from'jquery';
+import React from "react";
 import "./ChatBox.css";
-import { GetContacts, GetNickName, GetPhoto, GetChat, SendMessage } from '../../data/users';
-//import ChatDisp from './ChatDisp';
-import ChatDispA from "./ChatDispA";
+import { GetNickName, GetPhoto, SendMessage } from '../../data/users';
+import ChatDisp from "./ChatDisp";
 import { formatDateTime } from "../formatDateTime";
 import ChatInput from "./ChatInput";
+import alt from '../../data/blank_contact.jpg'
 
 function ChatBox({contact, user, did_data_change, set_did_data_change}) {
 
-//    const [showAttach, setShowAttach] = useState(false);
-//	const [newMessage, setNewMessage] = useState("");
-//    const submitNewMessage_o = () => {
-	//	addNewMessage(user.id, newMessage);
-//		setNewMessage("");
-	//	scrollToLastMsg();
-//	};
-
-//    var message_type = 'text';
-
-//    const lastMsgRef = useRef(null);
-
     const submitNewMessage = (message_type, input, fileName) => {
-        var currentTime = formatDateTime(new Date());
+        const currentTime = formatDateTime(new Date());
         SendMessage(user, contact, currentTime, message_type, input, fileName);
         set_did_data_change(!did_data_change);
     }
@@ -37,13 +24,13 @@ function ChatBox({contact, user, did_data_change, set_did_data_change}) {
         return (
             <div className="chatbox col-8 limit_column_height">
                 <div className="chat_header">
-                    <img src={GetPhoto(contact)} className="cont_imgs"></img>
+                    <img src={GetPhoto(contact)} alt={alt} className="cont_imgs"></img>
                     <div className="chat_header_text">
                         <h2>{GetNickName(contact)}</h2>
                     </div>
                 </div>
                 <div className="chat_body chat__content">
-                    <ChatDispA user={user} contact={contact} />
+                    <ChatDisp user={user} contact={contact} />
                 </div>
                     <ChatInput submitNewMessage={submitNewMessage} />
             </div>

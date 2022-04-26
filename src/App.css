@@ -1,7 +1,7 @@
 .app{
     display: grid;
     place-items: center;
-    background-image: url("lake.jpg");
+    background-image: url("data/lake.jpg");
     background-size:cover;
     height: 100vh;
 }
@@ -39,30 +39,10 @@
     object-fit: cover;
 }
 
-.chat-box {
-    background-color: antiquewhite;
-}
-
-#add_file {
-    font-size: larger;
-    border: 0ch;
-    background-color: transparent;
-}
-
-#add_file:hover {
-    cursor: pointer;
-}
-
 
 
 .chat__contact-wrapper {
     flex: 1;
-}
-
-.chat__contact-name, .chat__contact-desc {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }
 
 .chat__contact-name {
@@ -72,24 +52,11 @@
     padding-left: 0.5vw;
 }
 
-.chat__contact-name, .chat__contact-desc {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
 .chat__contact-name {
     color: #000000;
     font-size: 1rem;
     margin-bottom: 2px;
     padding-left: 1vw;
-}
-
-.sidebar__search-wrapper {
-    padding: 7px 10px;
-    height: 50px;
-    background: #F6F6F6;
-    position: relative;
 }
 
 .limit_column_height {

@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import {FindUser, GetUser, VerifyPassword} from "../data/users";
+import {FindUser, VerifyPassword} from "../data/users";
 
 // this is only a basic screen, to see things can work
 function Login({setUser, setRegister}) {
@@ -9,7 +9,7 @@ function Login({setUser, setRegister}) {
 
     const login = function(e){
         e.preventDefault();
-        var userName = usernameTextBox.current.value;
+        const userName = usernameTextBox.current.value;
         if (FindUser(userName)){
             if (VerifyPassword(userName, passwordTextBox.current.value))
                 setUser(userName);

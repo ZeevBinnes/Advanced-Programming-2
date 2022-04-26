@@ -4,6 +4,7 @@ import AddContact from './AddContact';
 import { useState } from 'react';
 import { GetContacts, GetNickName, GetPhoto } from '../../data/users';
 import "./contacts.css"
+import alt from '../../data/blank_contact.jpg'
 
 
 function ContactsBar({user, setDisplayedContact}) {
@@ -19,7 +20,7 @@ function ContactsBar({user, setDisplayedContact}) {
     return(
         <aside className="sidebar col-4 limit_column_height">
             <div className="user_bar">
-                <img src={GetPhoto(user)} className="proph_imgs"></img>
+                <img src={GetPhoto(user)} alt={alt} className="proph_imgs"></img>
                 <div className="chat__contact-wrapper">
 					<h2 className="chat__contact-name"> {GetNickName(user)} </h2>
 				</div>

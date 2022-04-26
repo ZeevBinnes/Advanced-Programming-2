@@ -1,3 +1,5 @@
+// noinspection JSPrimitiveTypeWrapperUsage
+
 import { useRef } from "react";
 import { AddContactToUser, FindUser, GetContacts } from "../../data/users"
 
@@ -6,7 +8,7 @@ function AddContact({user, contacts, setContacts, setContactsToShow}) {
 
     const addContactLogic = function (e) {
         e.preventDefault();
-        var newContact = addBox.current.value;
+        const newContact = addBox.current.value;
         addBox.current.value = '';
         if (contacts.includes(newContact) || user == newContact){
             alert('you added this contact already')
@@ -26,11 +28,6 @@ function AddContact({user, contacts, setContacts, setContactsToShow}) {
 
     const addBox = useRef('');
 
-//    const checklIfEnter = e => {
-//        if (e.KeyCode === 13)
-//            addContactLogic();
-//        return false;
-//    }
 
     return(
         <div>
@@ -45,7 +42,7 @@ function AddContact({user, contacts, setContacts, setContactsToShow}) {
                         </div>
                         <div className="modal-body">
                             <form className="d-flex" >
-                                <input ref={addBox} onClick={addContactLogic} className="form-control me-2" type="Type-message" placeholder="Write contects username here" aria-label="Type-message"></input>
+                                <input ref={addBox} onClick={addContactLogic} className="form-control me-2" type="Type-message" placeholder="Write contact's username here" aria-label="Type-message"></input>
                             </form>
                         </div>
                         <div className="modal-footer">

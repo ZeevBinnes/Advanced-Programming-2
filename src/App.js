@@ -3,12 +3,8 @@ import './App.css';
 import User_app from './components/User_app';
 import Login from './components/Login';
 import Register from './components/Register';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
-    
-    // the users only buildin data
-    const [user_list, setlist] = useState([]);
 
     const [userConnected, setUser] = useState(null);
     const [register, setRegister] = useState(false);
@@ -29,14 +25,6 @@ function App() {
         return (
             <div className="app">
                 <User_app user={userConnected}/>
-                {/*<Router>
-                    <div className="app-content">
-                        <Sidebar user={userConnected} />
-                        <Routes>
-                            <Route path="/fff" component={User_app} />
-                        </Routes>
-                    </div>
-                </Router>*/}
             </div>
         );
     }

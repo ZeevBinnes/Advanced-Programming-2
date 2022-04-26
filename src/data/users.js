@@ -8,7 +8,7 @@ import pdfFile from './ex1PdfFile.pdf'
 import record from './record1.ogg'
 
 
-var users = {}
+const users = {};
 users['aaa'] = {nickName: 'Abba Even with a very long name', password: 'Apass', photo: A_photo,
     contacts: {'bbb': [
             {sender: true, time: '7:32 10.4.22', type: 'text', content: 'hi its my 1\'st message'},
@@ -43,14 +43,11 @@ users['u'] = {nickName: 'Me and my Name', password: 'Dpass', photo: Me_photo, co
 
 
 export function FindUser(id){
-    if (users[id] != null) {
-        return true;
-    } else
-        return false;
+    return users[id] != null;
 }
 
 export function GetUser(myId) {
-    var user = users[myId];
+    const user = users[myId];
     if (user != null)
         return JSON.parse(JSON.stringify(user));
     else
@@ -65,8 +62,8 @@ export function GetPhoto(id) {
 
 export function GetContacts(myId){
     if (users[myId] != null) {
-        var retval = [];
-        for (var con in users[myId].contacts) {
+        const retval = [];
+        for (let con in users[myId].contacts) {
             retval.push(con);
         }
         return retval;
@@ -93,9 +90,8 @@ export function AddContactToUser(user, newContact){
 }
 
 export function VerifyPassword(username, password){
-    if (users[username].password == password)
-        return true;
-    return false;
+    return users[username].password == password;
+
 }
 
 export function AddUser(userName, password, nickName, profImg) {

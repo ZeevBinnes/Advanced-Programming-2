@@ -3,8 +3,6 @@ import ContactsBar from './contacts/ContactsBar';
 import ChatBox from './chatbox/ChatBox'
 
 function User_app({user}) {
-    // thats the data for contacts and messages
-    const [contact_list, setContact_List] = useState([]);
 
     // add here a use State (maybe with ref) for updating user.
     const [did_data_change, set_did_data_change] = useState(false);
@@ -13,7 +11,7 @@ function User_app({user}) {
     const [displayedContact, setDisplayedContact] = useState(null);
 
     return (
-        <div className="user_app row">
+        <div className="user_app">
                 <ContactsBar user={user} setDisplayedContact={setDisplayedContact} />
                 <ChatBox contact={displayedContact} user={user}
                     did_data_change={did_data_change} set_did_data_change={set_did_data_change} />

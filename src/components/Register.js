@@ -1,5 +1,7 @@
+// noinspection JSCheckFunctionSignatures
+
 import { useRef, useState } from "react";
-import {AddUser, FindUser, GetUser, VerifyPassword} from "../data/users";
+import {AddUser, FindUser} from "../data/users";
 
 // this is only a basic screen, to see things can work
 function Register({setUser, setRegister}) {
@@ -12,9 +14,9 @@ function Register({setUser, setRegister}) {
 
     const register = function(e){
         e.preventDefault();
-        var userName = usernameTextBox.current.value;
-        var password = passwordTextBox.current.value;
-        var nickName = nickNameTextBox.current.value;
+        const userName = usernameTextBox.current.value;
+        const password = passwordTextBox.current.value;
+        const nickName = nickNameTextBox.current.value;
         if (FindUser(userName)) {
             alert('there is user with this username already')
         } else {
@@ -36,7 +38,7 @@ function Register({setUser, setRegister}) {
     const validate = function(text, len){
         if (text.length < len)
             return false;
-        if (text.match(/^[0-9a-zA-Z]+$/))
+        if (text.match(/^[\da-zA-Z]+$/))
             return true;
     }
 
@@ -56,7 +58,7 @@ function Register({setUser, setRegister}) {
             <div className="mb-3">
                 <label className="form-label">Password</label>
                 <input ref={passwordTextBox} type="password" className="form-control" id="exampleInputPassword1"></input>
-                <div id="passwordHelp" class="form-text">at least 4 letters or numbers</div>
+                <div id="passwordHelp">at least 4 letters or numbers</div>
             </div>
             <div className="mb-3">
                 <label className="form-label">Display Name</label>

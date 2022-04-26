@@ -1,3 +1,5 @@
+// noinspection JSCheckFunctionSignatures
+
 import { useState, useEffect } from "react";
 import { startRecording, saveRecording } from "./recorder-controls";
 

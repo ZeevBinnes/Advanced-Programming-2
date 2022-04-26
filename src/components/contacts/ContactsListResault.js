@@ -3,15 +3,15 @@ import ContactItem from './ContactItem'
 
 function ContactsListResault({user, toShow, setDisplayedContact}){
     const contactsListDisp = toShow.map((contact, key) =>{
-        var nickName = GetNickName(contact);
-        var photo = GetPhoto(contact)
+        const nickName = GetNickName(contact);
+        const photo = GetPhoto(contact);
         let chat =  GetChat(user, contact);
-        var lastMessage;
+        let lastMessage;
         if (chat.length == 0)
             lastMessage = {time: '', content: '', type: 'text'};
         else
             lastMessage = chat[chat.length - 1];
-        var content;
+        let content;
         if (lastMessage.type == 'text')
             content = lastMessage.content;
         else
