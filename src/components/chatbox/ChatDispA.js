@@ -60,7 +60,17 @@ function ChatDispA ({user, contact}) {
                 </div>
             )
         } else if (message.type == 'audio') {
-            return (<div></div>) /* (
+            return (
+            <div className="chat__msg-group" key={key}>
+            <div className={`chat__msg ${message.sender ? "chat__msg--rxd" : "chat__msg--sent"}`}>
+                <audio controls src={message.content} />
+                <span className="chat__msg-filler"> </span>
+                <span className="chat__msg-footer">
+                    {formatTime(message.time)}
+                </span>
+            </div>
+        </div>)
+         /* (
                 <div className="chat__msg-group" key={key}>
                     <div className={`chat__msg chat__img-wrapper ${message.sender ? "chat__msg--rxd" : "chat__msg--sent"}`}>
                     <iframe src={message.content} width="800px" height="2100px" />

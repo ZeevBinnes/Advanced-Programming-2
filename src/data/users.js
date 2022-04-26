@@ -5,6 +5,8 @@ import Me_photo from './prof_img.jpeg'
 
 import snowVideo from './snowVideo.mp4'
 import pdfFile from './ex1PdfFile.pdf'
+import record from './record1.ogg'
+
 
 var users = {}
 users['aaa'] = {nickName: 'Abba Even with a very long name', password: 'Apass', photo: A_photo,
@@ -25,7 +27,8 @@ users['bbb'] = {nickName: 'Bracha Achronah', password: 'Bpass', photo: B_photo,
             {sender: true, time: '8:37 10.4.22', type: 'image', content: Shahar_photo},
             {sender: true, time: '8:37 10.4.22', type: 'image', content: B_photo},
             {sender: false, time: '8:39 10.4.22', type: 'video', content: snowVideo},
-            {sender: false, time: '8:39 10.4.22', type: 'file', content: pdfFile, fileName: 'ew1PdfFile'}
+            {sender: false, time: '8:39 10.4.22', type: 'file', content: pdfFile, fileName: 'ew1PdfFile'},
+            {sender: false, time: '8:50 10.4.22', type: 'audio', content: record}
         ]}
     }
 users['Shahar userName'] = {nickName: 'Shahar', password: 'Cpass', photo: Shahar_photo, contacts: {}}

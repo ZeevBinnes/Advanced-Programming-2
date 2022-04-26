@@ -9,3 +9,4 @@ export function formatDateTime(dat) {
         dat.getFullYear().toString().slice(2,4)
     )
 }
+

@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import Icon from "./Icon";
+import useRecorder from "./useRecorder";
+import { formatMinutes, formatSeconds } from "./formatTime";
+import record from './record1.ogg'
 
 const attachButtons = [
 	{ icon: "attachRooms", label: "Choose room" },
@@ -9,12 +12,29 @@ const attachButtons = [
 	{ icon: "attachImage", label: "Choose image" },
 ];
 
+
 function ChatInput({submitNewMessage}) {
 	
 	const [fileUploaded, setFileUploaded] = useState(null);	
 	const [showAttach, setShowAttach] = useState(false);
 	const [newMessage, setNewMessage] = useState("");
 	const [messageType, setMessageType] = useState("text")
+
+	const { recorderState, ...handlers } = useRecorder({setFileUploaded});
+	const { recordingMinutes, recordingSeconds, initRecording } = recorderState;
+	const { startRecording, saveRecording, cancelRecording } = handlers;
+
+	useEffect(() => {
+		if (recorderState.audio){
+			const rec = recorderState.audio;
+			submitNewMessage("audio", rec);
+		}
+	}, [recorderState.audio])
+
+	function saveRec() {
+			saveRecording();
+	}
+
 
 	const [media, setMedia] = useState();
 	useEffect( ()=>{
@@ -64,7 +84,50 @@ function ChatInput({submitNewMessage}) {
 	}
 
 	return (
-		<div className="chat__input-wrapper">
+		initRecording ? (
+			<div className="chat__input-wrapper">
+
+				<div className="controls-container">
+					<div className="recorder-display">
+						<div className="recording-time">
+						{initRecording && <div className="recording-indicator"></div>}
+						<span>{formatMinutes(recordingMinutes)}</span>
+						<span>:</span>
+						<span>{formatSeconds(recordingSeconds)}</span>
+						</div>
+						{initRecording && (
+						<div className="cancel-button-container">
+							<button className="cancel-button" title="Cancel recording" onClick={cancelRecording}>
+							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="35" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+  <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+</svg>
+							</button>
+						</div>
+						)}
+					</div>	
+				</div>
+
+				<button
+				className="btn btn-default"
+				title="Save recording"
+				disabled={recordingSeconds === 0}
+				onClick={saveRec}
+				/*
+				{() => {
+					setMessageType('audio');
+					fileInputRef.current.click();
+					setFileUploaded({saveRecording});
+					submitNewMessage();
+				}}
+				*/
+				>
+				<Icon id="send" className="chat__input-icon" size="2x" />
+				</button>
+			
+			</div>
+		  ) : (
+			<div className="chat__input-wrapper">
 			<div className="pos-rel">
 				<button className="btn btn-default" aria-label="Attach" 
 					onClick={() => {
@@ -115,7 +178,7 @@ function ChatInput({submitNewMessage}) {
 			<input
                 className="chat__input"
                 placeholder="Type a message"
-                value={(messageType == 'text') ? newMessage : "UPLOAD MEDIA..."}
+                value={(messageType == 'text') ? newMessage : "Upload media"}
                 onChange={(e) => setNewMessage(e.target.value)}
                 onKeyDown={detectEnterPress}
 				disabled={(messageType == 'text') ? false : true}
@@ -124,12 +187,17 @@ function ChatInput({submitNewMessage}) {
 				<button aria-label="Send message" onClick={pressSubmit} className="btn btn-default">
 					<Icon id="send" className="chat__input-icon" />
 				</button>
-			) : (
-				<button aria-label="Record voice note" className="btn btn-default">
-					<Icon id="microphone" className="chat__input-icon" />
-				</button>
-			)}
+			) : (<button aria-label="Record voice note" 
+			onClick={startRecording} 
+			className="btn btn-default">
+				<Icon id="microphone" className="chat__input-icon" />
+			</button>
+				  )
+
+		}
+			
 		</div>
+		  )
 	);
 };
 

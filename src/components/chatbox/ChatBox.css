@@ -2,6 +2,7 @@
     flex: 1;
     flex-direction: column;
     display: flex;
+    min-width: 0;
 }
 
 .chat_header{
@@ -214,3 +215,46 @@
 }
 
 /* End Chat Footer Toolbar */
+
+.controls-container {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0.5rem;
+  }
+
+  .recorder-display {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+  }
+
+  .recording-indicator {
+    width: 10px;
+    height: 10px;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+    background-color: #fd1c03;
+    animation-name: animated-block;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  
+  .recording-time {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cancel-button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+  }
+  
+  .cancel-button:hover {
+    color: #fd1c03;
+  }
