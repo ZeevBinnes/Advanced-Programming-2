@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import {AddUser, FindUser} from "../data/users";
+import no_image from '../data/blank_contact.jpg'
 
 // this is only a basic screen, to see things can work
 function Register({setUser, setRegister}) {
@@ -27,7 +28,11 @@ function Register({setUser, setRegister}) {
             else if (!validate(nickName, 3))
                 alert('invalid nickname')
             else {
-                AddUser(userName, password, nickName, profilePicture);
+                if (!profilePicture)
+                    AddUser(userName, password, nickName, no_image);
+                else
+                    AddUser(userName, password, nickName, profilePicture);
+                console.log(profilePicture)
                 setRegister(false);
                 setUser(userName);
             }
