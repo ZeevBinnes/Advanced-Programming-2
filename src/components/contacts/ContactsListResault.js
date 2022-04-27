@@ -1,5 +1,6 @@
 import { GetChat, GetNickName, GetPhoto } from '../../data/users';
 import ContactItem from './ContactItem'
+import React from "react";
 
 function ContactsListResault({user, toShow, setDisplayedContact}){
     const contactsListDisp = toShow.map((contact, key) =>{

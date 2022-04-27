@@ -1,4 +1,6 @@
 //import alt from '../../data/blank_contact.jpg'
+
+import React from 'react'
 function ContactItem({id, name, time, lastMessage, photo, setDisplayedContact}) {
 
     const clickedContact = function(){

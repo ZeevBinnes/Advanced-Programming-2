@@ -1,7 +1,7 @@
 import ContactsListResault from './ContactsListResault';
 import SearchContacts from './SearchContacts';
 import AddContact from './AddContact';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { GetContacts, GetNickName, GetPhoto } from '../../data/users';
 import "./contacts.css"
 import alt from '../../data/blank_contact.jpg'

@@ -17,6 +17,7 @@ function ChatBox({contact, user, did_data_change, set_did_data_change}) {
     if (contact == null) {
         return (
             <div className="chatbox">
+                <div className="fill"></div>
             </div>
         )
 

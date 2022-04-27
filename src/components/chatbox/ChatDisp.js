@@ -11,7 +11,7 @@ function ChatDisp ({user, contact}) {
             return (
                 <div className="chat__msg-group" key={key}>
                     <p className={`chat__msg ${message.sender ? "chat__msg--rxd" : "chat__msg--sent"}`}>
-                        <span>{content}</span>
+                        <span className="mes">{content}</span>
                         <span className="chat__msg-filler"> </span>
                         <span className="chat__msg-footer">
                             {formatTime(message.time)}

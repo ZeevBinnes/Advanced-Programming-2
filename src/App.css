@@ -4,6 +4,7 @@
     background-image: url("data/lake.jpg");
     background-size:cover;
     height: 100vh;
+    min-width: 300px;
 }
 
 .login{

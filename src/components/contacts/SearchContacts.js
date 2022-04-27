@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 // import Icon from "components/Icon";
 
 // I didn't deal with the search button yet!

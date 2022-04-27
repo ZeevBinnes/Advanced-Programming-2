@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import {FindUser, VerifyPassword} from "../data/users";
 
 // this is only a basic screen, to see things can work
