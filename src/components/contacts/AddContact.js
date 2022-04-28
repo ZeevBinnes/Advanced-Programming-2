@@ -1,27 +1,29 @@
 // noinspection JSPrimitiveTypeWrapperUsage
 
-import React, { useRef } from "react";
+import { useRef, useState } from "react";
 import { AddContactToUser, FindUser, GetContacts } from "../../data/users"
 
 function AddContact({user, contacts, setContacts, setContactsToShow}) {
     
+    const [errors, setErrors] = useState('');
 
     const addContactLogic = function (e) {
-        e.preventDefault();
-        const newContact = addBox.current.value;
-        addBox.current.value = '';
-        if (contacts.includes(newContact) || user == newContact){
-            alert('you added this contact already')
-            return;
-        }
-        if (FindUser(newContact)) {
+//        e.preventDefault();
+        setErrors('');
+        const newContact = addBox.current.value;   
+        if (contacts.includes(newContact))
+            setErrors('you added this contact already')
+        else if (user == newContact)
+            setErrors('you can\'t add yourself as a contact')
+        else if (FindUser(newContact)) {
+            addBox.current.value = '';
             AddContactToUser(user, newContact);
         //    contacts.push(newContact);
             setContacts(GetContacts(user));
             setContactsToShow(GetContacts(user))
         } else {
             if (newContact != ''){
-                alert('no such user')
+                setErrors('no such user')
             }
         }
     }
@@ -42,12 +44,15 @@ function AddContact({user, contacts, setContacts, setContactsToShow}) {
                         </div>
                         <div className="modal-body">
                             <form className="d-flex" >
-                                <input ref={addBox} onClick={addContactLogic} className="form-control me-2" type="Type-message" placeholder="Write contact's username here" aria-label="Type-message"></input>
+                                <input ref={addBox} onClick={addContactLogic} onKeyDown={(e)=>{if (e.key === "Enter") {e.preventDefault(); addContactLogic(e)}}} className="form-control me-2" type="Type-message" placeholder="Write contact's username here" aria-label="Type-message"></input>
                             </form>
+                            <div className="err_alert" style={errors ? { display: "flex" } : { display: "none" }}>
+                                {errors}
+                            </div>
                         </div>
                         <div className="modal-footer">
                             {/*<button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>*/}
-                            <button type="button" onClick={addContactLogic} className="btn btn-primary" data-bs-dismiss="modal">Add Contact</button>
+                            <button type="button" onClick={addContactLogic} className="btn btn-primary">Add Contact</button>
                         </div>
                     </div>
                 </div>

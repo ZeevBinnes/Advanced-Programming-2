@@ -6,8 +6,8 @@ function ChatDisp ({user, contact}) {
     const chat = GetChat(user, contact);
 
     const chat_disp = chat.map((message, key) => {
-            const content = message.content;
-            if (message.type == 'text'){
+        const content = message.content;
+        if (message.type == 'text'){
             return (
                 <div className="chat__msg-group" key={key}>
                     <p className={`chat__msg ${message.sender ? "chat__msg--rxd" : "chat__msg--sent"}`}>

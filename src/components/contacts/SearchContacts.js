@@ -6,15 +6,22 @@ function SearchContacts( {doSearch} ) {
 
     const searchBox = useRef(null);
 
-    const search = function(e){
-        e.preventDefault();
+    const search = function(){
+    //    e.preventDefault();
         doSearch(searchBox.current.value)
     }
 
-    return(
-        
+    return(    
         <form className="chats_search">
-            <input onChange={search} ref={searchBox} onKeyUp={search} className="form-control" type="search" placeholder="Search" aria-label="Search"></input>
+            <input 
+                ref={searchBox} 
+                className="form-control" 
+                type="search" 
+                placeholder="Search" 
+                aria-label="Search"
+                onChange={search} 
+                onKeyDown={(e)=>{if (e.key === "Enter") e.preventDefault()}}>
+            </input>
         </form>
     )
 }

@@ -23,6 +23,11 @@
     color: blue;
     cursor: pointer;
 }
+
+.err_alert {
+    color: red;
+}
+
 .user_app{
     display: flex;
     background-color: whitesmoke;
