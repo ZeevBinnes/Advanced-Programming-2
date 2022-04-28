@@ -60,7 +60,7 @@ users['example'] = {nickName: 'Example User', password: 'ex01', photo: A_photo,
             ]
         }
     }
-users['Shaul'] = {nickName: 'king Shaul', password: 'king0', photo: Me_photo,
+users['Shaul'] = {nickName: 'King Shaul', password: 'king0', photo: Me_photo,
     contacts: {
         'example': [
             {sender: false, time: '7:34 10.3.22', type: 'text', content: 'I\'m looking for a musician, do you know one by any chance? my temper has been quite bad the last days..'},

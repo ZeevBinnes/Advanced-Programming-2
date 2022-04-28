@@ -1,6 +1,6 @@
 // noinspection JSPrimitiveTypeWrapperUsage
 
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { AddContactToUser, FindUser, GetContacts } from "../../data/users"
 
 function AddContact({user, contacts, setContacts, setContactsToShow}) {

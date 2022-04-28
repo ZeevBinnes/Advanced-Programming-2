@@ -4,7 +4,7 @@
     background-image: url("data/lake.jpg");
     background-size:cover;
     height: 100vh;
-    min-width: 300px;
+    min-width: 650px;
 }
 
 .login{
@@ -33,6 +33,7 @@
     background-color: whitesmoke;
     height: 90vh;
     width: 90vw;
+    min-width: 590px;
     box-shadow: -1px 4px 20px -6px black;
 }
 
