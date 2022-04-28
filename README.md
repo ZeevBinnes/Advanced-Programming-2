@@ -1,6 +1,6 @@
 # Messaging Desktop App
 
-This is a Messaging desktop app, written by Shahar and Ze'evi.
+This is a Messaging desktop app, written by Shahar and Ze'evi as part of the 'Advenced programming 2' course.
 
 It isn't connected to a server yet, so for now it's a local app.
 
@@ -8,7 +8,7 @@ It isn't connected to a server yet, so for now it's a local app.
 This app uses React, so it requiers node-js to be installed on your PC.
 This project was created with [Create React App](https://github.com/facebook/create-react-app). In addition, it contains links to bootstrap and bootstrap icons in it, so they don't have to e installed. There's no need to add any other libraries.
 
-In order to run this app, run `npm install` in the project's directory' and afterward 'npm start'.
+In order to run this app, run `npm install` in the project's directory' and afterward `npm start`.
 
 ## Example User
 You can see an example user with some chats:
