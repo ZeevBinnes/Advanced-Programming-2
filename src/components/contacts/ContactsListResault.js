@@ -16,7 +16,7 @@ function ContactsListResault({user, toShow, setDisplayedContact}){
         if (lastMessage.type === 'text')
             content = lastMessage.content;
         else
-            content = "<"+lastMessage.type+"> "+(lastMessage.fileName ? lastMessage.fileName : "");
+            content = lastMessage.type;
         return <ContactItem 
             id={contact}
             name={nickName} 

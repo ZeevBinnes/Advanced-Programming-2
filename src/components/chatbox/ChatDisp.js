@@ -19,7 +19,7 @@ function ChatDisp ({user, contact}) {
                     </p>
                 </div>
             )
-        } else if (message.type === 'image') {
+        } else if (message.type === 'Image') {
             return (
                 <div className="chat__msg-group" key={key}>
                     <div className={`chat__msg chat__img-wrapper ${message.sender ? "chat__msg--rxd" : "chat__msg--sent"}`}>
@@ -30,7 +30,7 @@ function ChatDisp ({user, contact}) {
                     </div>
                 </div>
             )
-        } else if (message.type === 'video') {
+        } else if (message.type === 'Video') {
             return (
                 <div className="chat__msg-group" key={key}>
                     <div className={`chat__msg chat__img-wrapper ${message.sender ? "chat__msg--rxd" : "chat__msg--sent"}`}>
@@ -41,7 +41,7 @@ function ChatDisp ({user, contact}) {
                     </div>
                 </div>
             )
-        } else if (message.type === 'file') {
+        } else if (message.type === 'File') {
             return (
                 <div className="chat__msg-group" key={key}>
                     <div className={`chat__msg ${message.sender ? "chat__msg--rxd" : "chat__msg--sent"}`}>
@@ -59,7 +59,7 @@ function ChatDisp ({user, contact}) {
                     </div>
                 </div>
             )
-        } else if (message.type === 'audio') {
+        } else if (message.type === 'Audio') {
             return (
             <div className="chat__msg-group" key={key}>
             <div className={`chat__msg ${message.sender ? "chat__msg--rxd" : "chat__msg--sent"}`}>

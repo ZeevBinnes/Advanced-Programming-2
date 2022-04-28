@@ -28,7 +28,7 @@ function ChatInput({submitNewMessage}) {
 	useEffect(() => {
 		if (recorderState.audio){
 			const rec = recorderState.audio;
-			submitNewMessage("audio", rec);
+			submitNewMessage("Audio", rec);
 		}
 	}, [recorderState.audio])
 
@@ -77,11 +77,11 @@ function ChatInput({submitNewMessage}) {
 		if (key === 'attachBtn')
 			setMessageType('text');
 		if (key === 'Choose image')
-			setMessageType('image');
+			setMessageType('Image');
 		else if (key === 'Choose document')
-			setMessageType('file');
+			setMessageType('File');
 		else if (key === 'Choose room')
-			setMessageType('video')
+			setMessageType('Video')
 	}
 
 	return (
@@ -114,14 +114,6 @@ function ChatInput({submitNewMessage}) {
 				title="Save recording"
 				disabled={recordingSeconds === 0}
 				onClick={saveRec}
-				/*
-				{() => {
-					setMessageType('audio');
-					fileInputRef.current.click();
-					setFileUploaded({saveRecording});
-					submitNewMessage();
-				}}
-				*/
 				>
 				<Icon id="send" className="chat__input-icon" size="2x" />
 				</button>

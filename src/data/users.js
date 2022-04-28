@@ -44,19 +44,19 @@ users['example'] = {nickName: 'Example User', password: 'ex01', photo: A_photo,
             {sender: false, time: '16:49 9.3.22', type: 'text', content: 'wow! let\'s make you king then!'},
             ],
         'Shlomo': [
-            {sender: true, time: '9:22 14.3.22', type: 'image', content: beit_hmikdash},
+            {sender: true, time: '9:22 14.3.22', type: 'Image', content: beit_hmikdash},
             {sender: false, time: '9:32 14.3.22', type: 'text', content: 'that\'s nice! did you see what Hordus is going to build?'},
-            {sender: false, time: '9:33 14.3.22', type: 'image', content: bait_sheni},
+            {sender: false, time: '9:33 14.3.22', type: 'Image', content: bait_sheni},
             ],
         'Natan': [
             {sender: false, time: '15:30 9.3.22', type: 'text', content: 'hello :)'},
             ],
         'Shahar': [
             {sender: false, time: '8:32 10.4.22', type: 'text', content: 'hi :)'},
-            {sender: false, time: '8:39 10.4.22', type: 'video', content: snowVideo},
+            {sender: false, time: '8:39 10.4.22', type: 'Video', content: snowVideo},
             {sender: true, time: '8:39 10.4.22', type: 'text', content: 'did you see are new exresize?'},
-            {sender: true, time: '8:39 10.4.22', type: 'file', content: pdfFile, fileName: 'ex1PdfFile'},
-            {sender: false, time: '8:50 10.4.22', type: 'audio', content: record}
+            {sender: true, time: '8:39 10.4.22', type: 'File', content: pdfFile, fileName: 'ex1PdfFile'},
+            {sender: false, time: '8:50 10.4.22', type: 'Audio', content: record}
             ]
         }
     }
@@ -81,9 +81,9 @@ users['kingDavid'] = {nickName: 'David HaMelech', password: 'king1', photo: crow
 users['Shlomo'] = {nickName: 'King Shlomo', password: 'king2', photo: beit_hmikdash,
     contacts: {
         'example': [
-            {sender: false, time: '9:22 14.3.22', type: 'image', content: beit_hmikdash},
+            {sender: false, time: '9:22 14.3.22', type: 'Image', content: beit_hmikdash},
             {sender: true, time: '9:32 14.3.22', type: 'text', content: 'that\'s nice! did you see what Hordus is going to build?'},
-            {sender: true, time: '9:33 14.3.22', type: 'image', content: bait_sheni},
+            {sender: true, time: '9:33 14.3.22', type: 'Image', content: bait_sheni},
             ],
         }
     }
@@ -98,10 +98,10 @@ users['Shahar'] = {nickName: 'Shahar HaMelech!!!!11', password: 'sh12', photo: S
     contacts: {
         'example': [
             {sender: true, time: '8:32 10.4.22', type: 'text', content: 'hi :)'},
-            {sender: true, time: '8:39 10.4.22', type: 'video', content: snowVideo},
+            {sender: true, time: '8:39 10.4.22', type: 'Video', content: snowVideo},
             {sender: false, time: '8:39 10.4.22', type: 'text', content: 'did you see are new exresize?'},
-            {sender: false, time: '8:39 10.4.22', type: 'file', content: pdfFile, fileName: 'ex1PdfFile'},
-            {sender: true, time: '8:50 10.4.22', type: 'audio', content: record}
+            {sender: false, time: '8:39 10.4.22', type: 'File', content: pdfFile, fileName: 'ex1PdfFile'},
+            {sender: true, time: '8:50 10.4.22', type: 'Audio', content: record}
             ]
         }
     }
