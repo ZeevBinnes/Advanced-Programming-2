@@ -54,7 +54,7 @@ function ChatInput({submitNewMessage}) {
 	const detectEnterPress = (e) => {
 		if (e.key === "Enter" || e.keyCode === 13) {
 			e.preventDefault();
-			if (messageType == 'text') {
+			if (messageType === 'text') {
 				submitNewMessage(messageType, newMessage);
 				setNewMessage('');
 			} else {
@@ -64,7 +64,7 @@ function ChatInput({submitNewMessage}) {
 	};
     
 	const pressSubmit = () => {
-		if (messageType == 'text') {
+		if (messageType === 'text') {
 			submitNewMessage(messageType, newMessage);
 			setNewMessage('');
 		} else if (fileUploaded != null) {
@@ -74,13 +74,13 @@ function ChatInput({submitNewMessage}) {
 	}
 
 	const determineMessageType = (key) => {
-		if (key == 'attachBtn')
+		if (key === 'attachBtn')
 			setMessageType('text');
-		if (key == 'Choose image')
+		if (key === 'Choose image')
 			setMessageType('image');
-		else if (key == 'Choose document')
+		else if (key === 'Choose document')
 			setMessageType('file');
-		else if (key == 'Choose room')
+		else if (key === 'Choose room')
 			setMessageType('video')
 	}
 
@@ -179,12 +179,12 @@ function ChatInput({submitNewMessage}) {
 			<input
                 className="chat__input"
                 placeholder="Type a message"
-                value={(messageType == 'text') ? newMessage : "Upload media"}
+                value={(messageType === 'text') ? newMessage : "Upload media"}
                 onChange={(e) => setNewMessage(e.target.value)}
                 onKeyDown={detectEnterPress}
-				disabled={(messageType != 'text')}
+				disabled={(messageType !== 'text')}
             />
-			{newMessage || (messageType != 'text') ? (
+			{newMessage || (messageType !== 'text') ? (
 				<button aria-label="Send message" onClick={pressSubmit} className="btn btn-default">
 					<Icon id="send" className="chat__input-icon" />
 				</button>

@@ -7,13 +7,12 @@ function AddContact({user, contacts, setContacts, setContactsToShow}) {
     
     const [errors, setErrors] = useState('');
 
-    const addContactLogic = function (e) {
-//        e.preventDefault();
+    const addContactLogic = function () {
         setErrors('');
         const newContact = addBox.current.value;   
         if (contacts.includes(newContact))
             setErrors('you added this contact already')
-        else if (user == newContact)
+        else if (user === newContact)
             setErrors('you can\'t add yourself as a contact')
         else if (FindUser(newContact)) {
             addBox.current.value = '';
@@ -22,7 +21,7 @@ function AddContact({user, contacts, setContacts, setContactsToShow}) {
             setContacts(GetContacts(user));
             setContactsToShow(GetContacts(user))
         } else {
-            if (newContact != ''){
+            if (newContact !== ''){
                 setErrors('no such user')
             }
         }

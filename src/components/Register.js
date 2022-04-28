@@ -19,7 +19,7 @@ function Register({setUser, setRegister}) {
 
     const register = function(e){
         e.preventDefault();
-        var isErr = false;
+        let isErr = false;
         setuserNameErrors('');
         setpasswordErrors('');
         setnicknameErrors('');
@@ -45,7 +45,7 @@ function Register({setUser, setRegister}) {
         }
     }
 
-    // can me split if we want different validations.
+    // can be split if we want different validations.
     const validateUsername = function(text){
         if (text.length < 3){
             setuserNameErrors('username should be at least 3 characters');
@@ -55,7 +55,7 @@ function Register({setUser, setRegister}) {
             setuserNameErrors('username should contain only characters and numbers');
             return false;
         }
-        if (text.search(/[ ]/) > 0) {
+        if (text.search(/ /) > 0) {
             setuserNameErrors('username should not contain spaces');
             return false;
         }
@@ -64,25 +64,25 @@ function Register({setUser, setRegister}) {
 
     const validateNickname = function(text){
         if (text.length < 3){
-            setuserNameErrors('Nickname should be at least 3 characters');
+            setnicknameErrors('Nickname should be at least 3 characters');
             return false;
         }
         if (!text.match(/^[\da-zA-Z ]+$/)){
-            setuserNameErrors('Nickname should contain only words and numbers');
+            setnicknameErrors('Nickname should contain only words and numbers');
             return false;
         }
         return true;
     }
 
     const validatePassword = function(password) {
-        var errList = '';
+        let errList = '';
         if (password.length < 4) {
             errList=("Your password should be at least 4 characters");
         }
         else if (password.search(/[a-z]/i) < 0) {
             errList=("Your password should contain at least one letter");
         }
-        else if (password.search(/[0-9]/) < 0) {
+        else if (password.search(/\d/) < 0) {
             errList=("Your password should contain at least one digit");
         }
         if (errList){

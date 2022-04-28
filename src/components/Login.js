@@ -10,7 +10,7 @@ function Login({setUser, setRegister}) {
 
     const login = function(e){
         e.preventDefault();
-        var tempErr = [];
+        let tempErr = [];
         const userName = usernameTextBox.current.value;
         if (FindUser(userName)){
             if (VerifyPassword(userName, passwordTextBox.current.value))

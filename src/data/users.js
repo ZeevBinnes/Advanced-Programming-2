@@ -155,7 +155,7 @@ export function AddContactToUser(user, newContact){
 }
 
 export function VerifyPassword(username, password){
-    return users[username].password == password;
+    return users[username].password === password;
 
 }
 
@@ -167,7 +167,7 @@ export function SendMessage(fromUser, toContact, time, type, content, fileName) 
     const sentMsg = {sender: false, time: time, type: type, content: content, fileName: fileName}
     const recvMsg = {sender: true, time: time, type: type, content: content, fileName: fileName}
 
-    if (users[fromUser] == undefined && users[toContact == undefined]) {
+    if (users[fromUser] === undefined && users[toContact === undefined]) {
         return null;
     } else {
         if (!(toContact in users[fromUser].contacts))

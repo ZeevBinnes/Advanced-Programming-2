@@ -1,6 +1,6 @@
 import React, {useState } from 'react';
 import './App.css';
-import User_app from './components/User_app';
+import UserApp from './components/UserApp';
 import Login from './components/Login';
 import Register from './components/Register';
 
@@ -24,7 +24,7 @@ function App() {
     } else {
         return (
             <div className="app">
-                <User_app user={userConnected}/>
+                <UserApp user={userConnected}/>
             </div>
         );
     }

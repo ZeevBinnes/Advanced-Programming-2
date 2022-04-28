@@ -8,12 +8,12 @@ function ContactsListResault({user, toShow, setDisplayedContact}){
         const photo = GetPhoto(contact);
         let chat =  GetChat(user, contact);
         let lastMessage;
-        if (chat.length == 0)
+        if (chat.length === 0)
             lastMessage = {time: '', content: '', type: 'text'};
         else
             lastMessage = chat[chat.length - 1];
         let content;
-        if (lastMessage.type == 'text')
+        if (lastMessage.type === 'text')
             content = lastMessage.content;
         else
             content = "<"+lastMessage.type+"> "+(lastMessage.fileName ? lastMessage.fileName : "");
