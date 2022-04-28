@@ -8,7 +8,7 @@ It isn't connected to a server yet, so for now it's a local app.
 This app uses React, so it requiers node-js to be installed on your PC.
 This project was created with [Create React App](https://github.com/facebook/create-react-app). In addition, it contains links to bootstrap and bootstrap icons in it, so they don't have to e installed. There's no need to add any other libraries.
 
-In order to run this app, run `npm start` in the project's directory.
+In order to run this app, run `npm install` in the project's directory' and afterward 'npm start'.
 
 ## Example User
 You can see an example user with some chats:
@@ -17,7 +17,7 @@ username: example
 
 password: ex01
 
-you can also add more contacts that are hard-coded already: aaa, bbb.
+you can also add more contacts that are hard-coded already( aaa, bbb) and aren't connected to example yet.
 
 ## Inside The App
 The first screen is a Login screen, and it includes also a link to the Register screen.
