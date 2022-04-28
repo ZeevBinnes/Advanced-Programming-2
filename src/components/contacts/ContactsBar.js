@@ -22,7 +22,7 @@ function ContactsBar({user, setDisplayedContact}) {
             <div className="user_bar">
                 <img src={GetPhoto(user)} alt={alt} className="proph_imgs"></img>
                 <div className="chat__contact-wrapper">
-					<h2 className="chat__contact-name"> {GetNickName(user)} </h2>
+					<h1 className="chat__contact-name"> {GetNickName(user)} </h1>
 				</div>
                 <AddContact user={user} contacts={contacts} setContacts={SetContacts} setContactsToShow={setContactsToShow} />
             </div>
